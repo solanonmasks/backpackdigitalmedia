@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+
+// ✏️ Service cards. On hover the blue icon swaps to the lime "-hover" icon.
+const cards = [
+  { icon: 1, href: '/services/social/', title: 'Digital Marketing', text: 'Grow your audience and engage customers where they spend the most time.' },
+  { icon: 2, href: '/services/branding/', title: 'Branding Services', text: 'Build a memorable brand that stands out.' },
+  { icon: 3, href: '/services/seo/', title: 'SEO (Search Engine Optimization)', text: 'Improve your search rankings and get discovered by the right people.' },
+  { icon: 4, href: '/services/sem/', title: 'SEM (Search Engine Marketing)', text: 'Drive traffic and leads with paid search campaigns.' },
+  { icon: 5, href: '/services/email/', title: 'Email Marketing', text: 'Engage your audience with strategic email campaigns.' },
+  { icon: 6, href: '/services/web/', title: 'Website Development', text: 'Create a beautiful, functional website that drives results.' },
+];
+const icons = '/assets/img/marketing/services';
+---
+<Base title="Digital Marketing">
+  <section style="margin-top:50px;">
+    <div class="container stack" style="gap:40px;">
+      <div class="stack" style="text-align:center;gap:16px;">
+        <h1 class="h1">Tailored Marketing<br /><span class="gradient-text">Solutions</span></h1>
+        <p class="lead" style="line-height:normal;">Bringing you strategies that work.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;">
+        <div class="stack bg-blue" style="padding:30px;border-radius:20px;gap:16px;align-items:flex-start;">
+          <h2 class="h2 white" style="line-height:1.1;">Digital<br />Marketing</h2>
+          <p style="font-size:22px;font-weight:300;color:#fff;">We create data-driven digital campaigns that help you connect with the right audience, increase engagement, and drive growth</p>
+          <a href="/contact/" class="btn btn-lime">Let’s Talk Marketing</a>
+        </div>
+        <div class="stack" style="background:var(--lime);padding:30px;border-radius:20px;gap:16px;align-items:flex-start;">
+          <h2 class="h2" style="color:var(--ink);line-height:1.1;">Recruitment<br />Marketing</h2>
+          <p style="font-size:22px;font-weight:300;">Hiring the right people is critical. We help you attract top talent through targeted campaigns, engaging content, and smart outreach.</p>
+          <a href="/recruitment-marketing/" class="btn btn-dark">Let’s Talk Hiring</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal style="margin-top:50px;">
+    <div class="stack" style="max-width:800px;margin:0 auto 60px;padding:0 12px;text-align:center;gap:16px;">
+      <span style="font-size:18px;font-weight:700;">Our Services</span>
+      <h2 class="h2">Tailored Marketing Solutions to Fuel Your <span class="gradient-text">Growth</span></h2>
+      <p class="lead" style="line-height:normal;">We offer tailored marketing solutions to help you hit your goals.</p>
+    </div>
+    <div style="background:var(--pale-blue);border-top-left-radius:28px;border-top-right-radius:28px;padding:100px 12px;">
+      <div class="dm-grid">
+        {cards.map((c) => (
+          <div class="dm-card">
+            <a href={c.href}>
+              <div class="dm-icon">
+                <img src={`${icons}/icon-${c.icon}.svg`} alt="" />
+                <img class="hover" src={`${icons}/icon-${c.icon}-hover.svg`} alt="" />
+              </div>
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+              <span class="more">Learn More <img src={`${icons}/arrow-right.svg`} alt="" /></span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

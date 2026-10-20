@@ -1,0 +1,27 @@
+---
+import { navLinks } from '../data/site.js';
+
+// Highlight the link for the section we're in.
+const path = Astro.url.pathname;
+const isCurrent = (href) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<nav class="nav" aria-label="Main">
+  <div class="nav-bar">
+    <a href="/" class="nav-logo"><img src="/assets/img/logo.svg" alt="Backpack Digital Media" /></a>
+    <div class="nav-links">
+      {navLinks.map((l) => (
+        <a href={l.href} class="nav-link" aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>
+      ))}
+    </div>
+    <div class="nav-cta"><a href="/contact/" class="btn btn-lime">Contact Us</a></div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-menu" id="mobile-menu">
+    {navLinks.map((l) => (
+      <a href={l.href} class="nav-link" aria-current={isCurrent(l.href) ? 'page' : undefined}>{l.label}</a>
+    ))}
+    <div class="nav-cta"><a href="/contact/" class="btn btn-lime">Contact Us</a></div>
+  </div>
+</nav>

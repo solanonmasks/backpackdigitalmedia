@@ -1,0 +1,257 @@
+---
+// One template for every case study. Text lives in src/data/caseStudies.js.
+import Base from '../../layouts/Base.astro';
+import { caseStudyList, getCaseStudy } from '../../data/caseStudies.js';
+
+export function getStaticPaths() {
+  return caseStudyList.map((c) => ({ params: { slug: c.slug }, props: { csKey: c.key } }));
+}
+
+const { csKey } = Astro.props;
+const cs = getCaseStudy(csKey);
+const img = '/assets/img/case-studies';
+---
+<Base title={cs.headline} description={cs.summary[0]}>
+  <!-- Hero stats -->
+  <section class="bg-dark" style="padding:96px 0;">
+    <div class="container-wide stack" style="gap:28px;">
+      <a href="/case-studies/" class="back-link" style="font-size:16px;color:#fff;opacity:.8;align-self:flex-start;white-space:nowrap;">← All case studies</a>
+      <p style="font-size:18px;color:var(--lime);text-transform:uppercase;letter-spacing:.06em;">{cs.descriptor}</p>
+      <h1 style="font-size:clamp(40px,6vw,72px);font-weight:700;color:#fff;text-transform:uppercase;line-height:1;max-width:1100px;text-wrap:balance;">{cs.headline}</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;margin-top:24px;">
+        {cs.hero.map((st) => (
+          <div class="stack" style="background:var(--lime);border-radius:20px;padding:28px 32px;gap:10px;color:var(--ink);">
+            <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+              {st.before && (
+                <>
+                  <span style="font-size:clamp(32px,3vw,40px);font-weight:500;opacity:.75;text-decoration:line-through;text-decoration-thickness:3px;">{st.before}</span>
+                  <span style="font-size:32px;font-weight:700;">→</span>
+                </>
+              )}
+              <span style="font-size:56px;font-weight:700;line-height:1;letter-spacing:-.02em;">{st.after}</span>
+            </div>
+            <span class="eyebrow" style="letter-spacing:.08em;">{st.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary and client -->
+  <section data-reveal style="padding:96px 24px 0;">
+    <div class="stack" style="max-width:720px;margin:0 auto;gap:24px;">
+      {cs.summary.map((p) => <p style="font-size:24px;line-height:1.45;text-wrap:pretty;">{p}</p>)}
+      {cs.client.length > 0 && <h2 style="font-size:28px;font-weight:700;text-transform:uppercase;margin-top:24px;">The client</h2>}
+      {cs.client.map((p) => <p style="font-size:20px;line-height:1.6;text-wrap:pretty;">{p}</p>)}
+    </div>
+  </section>
+
+  <!-- Before / after ledger (two tabs on phones) -->
+  <section style="padding:96px 0 0;">
+    <div class="container-wide">
+      <div class="ledger-tabs" role="tablist" aria-label="Before and after">
+        <button type="button" role="tab" data-tab="before" aria-selected="true">Before</button>
+        <button type="button" role="tab" data-tab="after" aria-selected="false">After</button>
+      </div>
+      <div class="ledger" data-active="before">
+        <div data-col="before" data-reveal class="stack" style="background:var(--stripe);border-radius:20px;padding:clamp(28px,4vw,56px);gap:20px;">
+          <span class="eyebrow">{cs.beforeLabel}</span>
+          <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;text-transform:uppercase;line-height:1.05;">{cs.beforeTitle}</h2>
+          {cs.before.map((bk) =>
+            bk.b ? (
+              <div style="display:flex;gap:16px;align-items:flex-start;">
+                <span style="width:12px;height:12px;background:var(--ink);flex-shrink:0;margin-top:9px;"></span>
+                <p style="font-size:19px;line-height:1.5;">{bk.t}</p>
+              </div>
+            ) : (
+              <p style="font-size:19px;line-height:1.6;text-wrap:pretty;">{bk.t}</p>
+            )
+          )}
+        </div>
+        <div data-col="after" data-reveal class="stack" style="background:var(--pale-blue);border-radius:20px;padding:clamp(28px,4vw,56px);gap:20px;">
+          <span class="eyebrow">After</span>
+          <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;text-transform:uppercase;line-height:1.05;">{cs.afterTitle}</h2>
+          <p style="font-size:19px;line-height:1.6;">{cs.changedIntro}</p>
+          {cs.changes.map((ch, i) => (
+            <div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;">
+              <span style="font-size:56px;font-weight:700;color:var(--blue);line-height:.9;">{i + 1}</span>
+              <p style="font-size:19px;line-height:1.55;"><strong style="font-weight:700;">{ch.title}</strong> {ch.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The insight (BankYourSalary only) -->
+  {cs.insight.length > 0 && (
+    <section data-reveal style="padding:96px 0 0;">
+      <div class="container-wide">
+        <div class="bg-dark" style="border-radius:20px;padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,4vw,64px);align-items:center;">
+          <div class="stack" style="gap:20px;">
+            <span class="eyebrow" style="color:var(--lime);">The insight</span>
+            <h2 style="font-size:clamp(30px,3.4vw,46px);font-weight:700;text-transform:uppercase;line-height:1.02;color:#fff;text-wrap:balance;">{cs.insightTitle}</h2>
+            {cs.insight.map((p) => <p style="font-size:19px;line-height:1.6;color:#fff;text-wrap:pretty;">{p}</p>)}
+          </div>
+          <div class="stack" style="gap:16px;">
+            {cs.compare.map((cmp) => (
+              <div class="stack" style="background:#fff;border-radius:20px;padding:28px 32px;gap:14px;">
+                <span class="eyebrow" style="letter-spacing:.08em;">{cmp.role}</span>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;">
+                  <div class="stack" style="gap:4px;"><span style="font-size:14px;text-transform:uppercase;letter-spacing:.06em;">Vancouver keeps</span><span style="font-size:clamp(28px,3vw,40px);font-weight:500;opacity:.7;">{cmp.city}</span></div>
+                  <div class="stack" style="gap:4px;"><span style="font-size:14px;text-transform:uppercase;letter-spacing:.06em;">The North keeps</span><span style="font-size:clamp(28px,3vw,40px);font-weight:700;">{cmp.north}</span></div>
+                </div>
+                <span style="align-self:flex-start;background:var(--lime);font-size:clamp(28px,3vw,40px);font-weight:700;padding:6px 16px;border-radius:12px;line-height:1.1;">{cmp.gap} <span style="font-size:16px;font-weight:500;">more over 5 years</span></span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Creative gallery -->
+  <section style="padding:96px 0 0;background:#fff;">
+    <div class="container-wide">
+      <h2 data-reveal style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;margin-bottom:40px;">The ads that did it.</h2>
+
+      {csKey === 'cs-painting' && (
+        <>
+          <div style="display:flex;gap:24px;overflow-x:auto;padding:8px 4px 32px;scroll-snap-type:x mandatory;">
+            {[1, 2, 3, 4, 5].map((n) => (
+              <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;">
+                <img src={`${img}/painting/carousel-${n}.png`} alt={`Carousel slide ${n}`} class="shadow-img" loading="lazy" />
+              </div>
+            ))}
+          </div>
+          <p class="caption">Carousel: the five “Goodbye, beige” slides, in order. Swipe through the before, the after and the details.</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;margin-top:64px;">
+            {[1, 2, 3, 4].map((n) => (
+              <div data-reveal><img src={`${img}/painting/ad-${n}.png`} alt={`Single-image ad ${n}`} class="shadow-img" loading="lazy" /></div>
+            ))}
+          </div>
+          <p class="caption">Single image: the four approved 1x1 ads across cabinets, exterior and interior ad sets.</p>
+        </>
+      )}
+
+      {csKey === 'cs-bys' && (
+        <>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;">
+            <div data-reveal><img src={`${img}/bys/retail-1x1.png`} alt="Retail Store Manager comparison ad" class="shadow-img" loading="lazy" /></div>
+            <div data-reveal><img src={`${img}/bys/food-1x1.png`} alt="Food Service Manager comparison ad" class="shadow-img" loading="lazy" /></div>
+          </div>
+          <p class="caption">One card per role: the Vancouver take-home, the northern take-home and the five-year gap.</p>
+          <div style="display:grid;grid-template-columns:4fr 2.6fr 7fr;gap:24px;align-items:end;margin-top:64px;overflow-x:auto;min-width:0;">
+            <div data-reveal style="min-width:200px;"><img src={`${img}/bys/retail-4x5.png`} alt="Feed 4:5 version" class="shadow-img" loading="lazy" /></div>
+            <div data-reveal style="min-width:140px;"><img src={`${img}/bys/retail-9x16.png`} alt="Stories 9:16 version" class="shadow-img" loading="lazy" /></div>
+            <div data-reveal style="min-width:300px;"><img src={`${img}/bys/retail-link.png`} alt="Link ad 1.91:1 version" class="shadow-img" loading="lazy" /></div>
+          </div>
+          <p class="caption">The same card resized for feed, stories and link placements.</p>
+        </>
+      )}
+
+      {csKey === 'cs-reno' && (
+        <>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;">
+            {[
+              { f: 'a', alt: 'Creative A: The pink tub is gone', tag: 'A' },
+              { f: 'b', alt: 'Creative B: Same bathroom', tag: 'B' },
+              { f: 'c', alt: 'Variant: The pink tub is gone' },
+              { f: 'd', alt: 'Variant: Same bathroom' },
+            ].map((x) => (
+              <div data-reveal style="position:relative;">
+                <img src={`${img}/reno/${x.f}.png`} alt={x.alt} class="shadow-img" loading="lazy" />
+                {x.tag && <span style="position:absolute;top:16px;left:16px;background:var(--ink);color:var(--lime);font-size:22px;font-weight:700;padding:6px 16px;border-radius:10px;">{x.tag}</span>}
+              </div>
+            ))}
+          </div>
+          <p class="caption">A vs B test: two headlines over the same before-and-after, followed by their variants. The two cheapest-lead winners got the budget.</p>
+        </>
+      )}
+    </div>
+  </section>
+
+  <!-- Results table -->
+  <section style="padding:96px 0 0;">
+    <div class="container-wide">
+      <h2 data-reveal style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;">{cs.resultsTitle}</h2>
+      <p style="font-size:18px;line-height:1.5;margin:12px 0 32px;max-width:820px;">{cs.resultsNote}</p>
+      <div data-reveal style="overflow-x:auto;border-radius:20px;background:var(--stripe);">
+        <table class="results-table" style={`min-width:${cs.fourCol ? '720px' : '0'};`}>
+          <thead>
+            <tr>
+              <th scope="col">{cs.cols.c0}</th>
+              {cs.fourCol && <th scope="col">{cs.cols.c1}</th>}
+              <th scope="col">{cs.cols.c2}</th>
+              {cs.fourCol && <th scope="col">{cs.cols.c3}</th>}
+            </tr>
+          </thead>
+          <tbody>
+            {cs.rows.map((r) => (
+              <tr>
+                <td class="m">{r.m}</td>
+                {cs.fourCol && <td class="a">{r.a}</td>}
+                <td class="b">{r.b}</td>
+                {cs.fourCol && <td class="c"><span class={r.key ? 'key' : undefined}>{r.c}</span></td>}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {cs.calloutBordered ? (
+        <div data-reveal class="stack" style="margin-top:24px;border:4px solid var(--ink);border-radius:20px;padding:32px 36px;max-width:960px;gap:16px;">
+          {cs.calloutParas.map((p) => <p style="font-size:20px;line-height:1.6;text-wrap:pretty;">{p}</p>)}
+        </div>
+      ) : (
+        <div data-reveal class="bg-dark" style="margin-top:24px;border-radius:20px;padding:32px 36px;max-width:960px;">
+          {cs.calloutParas.map((p) => <p style="font-size:24px;line-height:1.45;color:#fff;font-weight:500;">{p}</p>)}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Why it worked -->
+  <section data-reveal style="padding:96px 24px 0;">
+    <div class="stack" style="max-width:720px;margin:0 auto;gap:24px;">
+      <h2 style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;">Why it worked</h2>
+      {cs.why.map((p) => <p style="font-size:20px;line-height:1.65;text-wrap:pretty;">{p}</p>)}
+      {cs.chips.length > 0 && (
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          {cs.chips.map((chip) => <span style="background:var(--pale-blue);font-size:18px;font-weight:500;padding:8px 18px;border-radius:999px;">{chip}</span>)}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-reveal style="padding:96px 24px;">
+    <div class="bg-dark stack" style="max-width:1320px;margin:0 auto;border-radius:20px;padding:clamp(40px,6vw,80px);gap:24px;align-items:flex-start;">
+      <h2 style="font-size:clamp(32px,4vw,52px);font-weight:700;text-transform:uppercase;color:#fff;line-height:1.05;max-width:960px;text-wrap:balance;">{cs.ctaTitle}</h2>
+      <p style="font-size:20px;line-height:1.5;color:#fff;max-width:760px;">{cs.ctaBody}</p>
+      <a href="/contact/" class="book-call">Book a call</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .back-link:hover { color: var(--lime) !important; opacity: 1 !important; }
+  .caption { font-size: 18px; line-height: 1.4; margin-top: 20px; max-width: 720px; }
+  .book-call { background: var(--lime); color: var(--ink); font-size: 24px; font-weight: 500; padding: 10px 24px; border-radius: 999px; transition: all .3s ease; }
+  .book-call:hover { transform: translateY(-2px); opacity: .85; color: var(--ink); }
+</style>
+
+<script>
+  // Phones: switch the before/after ledger between two tabs.
+  const ledger = document.querySelector<HTMLElement>('.ledger');
+  document.querySelectorAll<HTMLButtonElement>('.ledger-tabs [data-tab]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab!;
+      if (ledger) ledger.dataset.active = tab;
+      document.querySelectorAll('.ledger-tabs [data-tab]').forEach((b) =>
+        b.setAttribute('aria-selected', String(b === btn))
+      );
+      // Make sure the newly shown column isn't left hidden by the scroll reveal.
+      ledger?.querySelectorAll<HTMLElement>(`[data-col="${tab}"]`).forEach((el) => (el.style.opacity = ''));
+    });
+  });
+</script>

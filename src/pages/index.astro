@@ -1,0 +1,108 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+
+const clients = [0, 1, 2, 3, 4, 5, 6];
+
+// ✏️ "What we do" cards
+const whatWeDo = [
+  { href: '/services/sem/', title: 'Meta and Google Ads', text: 'Campaigns built around a clear offer and creative that stops the scroll, whether the goal is bookings, enquiries, foot traffic or sales. Measured in results and cost per result, reported monthly.' },
+  { href: '/services/branding/', title: 'Video and content production', text: 'On-site shoots with your people, your space and your product, edited into ads, reels and the content that makes a brand feel real. The raw material for everything else we run.' },
+  { href: '/services/social/', title: 'Social media management', text: 'Strategy, monthly calendars, posting and daily community management in your voice. A presence that looks like someone is home, because someone is.' },
+  { href: '/services/web/', title: 'Websites', text: 'Fast, mobile-first sites designed around what your customer came to do: book, buy, call or enquire. Delivered with hosting and handed over with the keys.' },
+  { href: '/services/seo/', title: 'SEO and local search', text: 'Google Business Profile, reviews, on-page work and local content, so customers find you when they search as well as when they scroll.' },
+  { href: '/recruitment-marketing/', title: 'Recruitment marketing', text: 'Indeed, Meta and purpose-built platforms for employers who need qualified applicants at volume, or need people to move for the role. See BankYourSalary.' },
+];
+
+// ✏️ "How we work" steps
+const steps = [
+  { title: 'We get inside it.', text: 'We sit with you, your staff and your numbers. How a customer finds you, what they ask, what they pay, what you turn away. By the end we can explain your business the way you would.' },
+  { title: 'We find the thing that makes you different.', text: 'Your customers already know why they chose you over the competition. Most businesses have never put it into words. We find it, test it against what your market actually responds to, and make it the foundation of your positioning, your creative and your offer.' },
+  { title: 'We write the strategy for you alone.', text: 'Not a package, not a tier. The channels, the offer, the creative and the budget are set by what we learned in the first two steps, and we walk you through the reasoning before anything runs.' },
+  { title: 'We become part of your team.', text: 'We are an extension of your in-house team, and you can always reach us. Most of the time you will not need to. We are already in your campaigns, testing, refining and finding the next gain, so every month is better than the last. Your growth is the job.' },
+];
+---
+<Base>
+  <!-- Hero -->
+  <section style="margin-top:100px;">
+    <div class="container two-col">
+      <div class="stack" style="gap:20px;">
+        <h1 class="h1" style="max-width:500px;">Marketing That <span data-moves style="font-style:italic;color:var(--blue);display:inline-block;">Moves</span> You Forward</h1>
+        <p class="lead">We help companies grow through innovative marketing strategies and targeted recruitment solutions</p>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;">
+          <a href="/digital-marketing/" class="btn btn-blue">Discover Our Services</a>
+          <a href="/contact/" class="btn btn-dark">Let’s Talk</a>
+        </div>
+      </div>
+      <!-- Animated backpack illustration (public/scripts/hero.js) -->
+      <bp-hero style="width:100%;display:block;min-height:200px;" role="img" aria-label="Social media icons flying into a Backpack bag"></bp-hero>
+    </div>
+  </section>
+  <script is:inline src="/scripts/hero.js" defer></script>
+
+  <!-- Client logos -->
+  <section data-reveal style="margin-top:100px;">
+    <div class="container" style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+      {clients.map((n) => (
+        <img src={`/assets/img/home/clients/${n}.png`} alt="Client logo" loading="lazy" style="width:170px;max-width:calc(33% - 10px);display:block;" />
+      ))}
+    </div>
+  </section>
+
+  <!-- Who we are -->
+  <section data-reveal class="bg-dark" style="margin-top:100px;padding:80px 0;">
+    <div class="container two-col">
+      <div class="dot-ring" style="width:min(100%,500px);">
+        <img class="dots" src="/assets/img/home/who_we_are/dots.svg" alt="" />
+        <img class="mark" src="/assets/img/home/who_we_are/white-logo.svg" alt="" style="width:18.4%;" />
+      </div>
+      <div class="stack" style="gap:20px;align-items:flex-start;">
+        <h2 class="h2 white">Who We Are</h2>
+        <p class="lead white">Backpack Digital Media is a team of marketing experts who make it simple for businesses to get real results. From digital campaigns to finding the right talent, we specialize in solutions that drive real growth</p>
+        <a href="/about/" class="btn btn-gradient">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section data-reveal style="margin-top:70px;">
+    <div class="container stack">
+      <div class="stack" style="gap:16px;margin-bottom:50px;">
+        <h2 class="h2">What we do</h2>
+        <p style="font-size:22px;font-weight:300;">Six things, done properly. Pick one or let us build the stack.</p>
+      </div>
+      <div class="svc-grid">
+        {whatWeDo.map((s, i) => (
+          <a href={s.href} class="svc-card">
+            <span class="num">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+            <span class="more">Learn more →</span>
+          </a>
+        ))}
+      </div>
+      <div style="display:flex;margin-top:50px;">
+        <a href="/contact/" class="pill btn-blue">Not sure where to start? Book a call.</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How we work -->
+  <section data-reveal class="bg-dark" style="margin-top:100px;padding:90px 0;">
+    <div class="container stack" style="gap:20px;">
+      <h2 class="h2 white" style="max-width:900px;line-height:1.1;text-wrap:balance;">We learn your business before we market it.</h2>
+      <p style="font-size:clamp(20px,2vw,24px);font-weight:300;color:#fff;line-height:1.4;max-width:820px;text-wrap:pretty;">Most agencies hand you a questionnaire and a template. We spend the first stretch of every engagement doing something closer to a job shadow.</p>
+      <div class="steps">
+        {steps.map((s, i) => (
+          <div class="step">
+            <span class="n">{i + 1}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaPanel variant="dark" />
+</Base>

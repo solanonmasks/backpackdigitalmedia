@@ -1,0 +1,112 @@
+---
+// Shared page shell: <head>, nav, footer and the small animation script.
+// Every page wraps its content in <Base title="...">...</Base>.
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title,
+  description = 'We help companies grow through innovative marketing strategies and targeted recruitment solutions.',
+} = Astro.props;
+const fullTitle = title
+  ? `${title} | Backpack Digital Media`
+  : 'Backpack Digital Media | Marketing That Moves You Forward';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/assets/img/logo.svg" type="image/svg+xml" />
+    <link rel="preload" href="/assets/font/HelveticaNeueLight.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/assets/font/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin />
+  </head>
+  <body>
+    <div class="page">
+      <Nav />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
+    <script>
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Nav: shrink padding once the page is scrolled past 50px.
+      const nav = document.querySelector('.nav');
+      const onScroll = () => nav?.classList.toggle('is-scrolled', window.scrollY > 50);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Nav: hamburger menu (shown below 1200px wide).
+      const toggle = document.querySelector('.nav-toggle');
+      toggle?.addEventListener('click', () => {
+        const open = nav?.classList.toggle('menu-open');
+        toggle.setAttribute('aria-expanded', String(!!open));
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1200 && nav?.classList.contains('menu-open')) {
+          nav.classList.remove('menu-open');
+          toggle?.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Home hero: "Moves" leans forward and drifts on a slow 5s loop.
+      const moves = document.querySelector('[data-moves]');
+      if (moves && !reduceMotion) {
+        moves.animate(
+          [
+            { transform: 'translateX(0) skewX(0deg)' },
+            { transform: 'translateX(4px) skewX(-3deg)', offset: 0.5 },
+            { transform: 'translateX(0) skewX(0deg)' },
+          ],
+          { duration: 5000, iterations: Infinity, easing: 'ease-in-out' }
+        );
+      }
+
+      // Scroll reveal: [data-reveal] blocks fade up once (1s) as they come into view.
+      // Anything already on screen when the page loads is shown straight away.
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const reveal = (el: HTMLElement) => {
+          io.unobserve(el);
+          el.animate(
+            [
+              { opacity: 0, transform: 'translateY(40px)' },
+              { opacity: 1, transform: 'none' },
+            ],
+            { duration: 1000, easing: 'cubic-bezier(.2,.7,.2,1)' }
+          );
+          el.style.opacity = '';
+        };
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((en) => en.isIntersecting && reveal(en.target as HTMLElement)),
+          { threshold: 0.12 }
+        );
+        const hidden = new Set<HTMLElement>();
+        document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+          if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+          el.style.opacity = '0';
+          hidden.add(el);
+          io.observe(el);
+        });
+        // Safety net: show anything that scrolled into view but was missed (e.g. very tall blocks).
+        window.addEventListener(
+          'scroll',
+          () => {
+            hidden.forEach((el) => {
+              if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight * 0.95) {
+                hidden.delete(el);
+                reveal(el);
+              }
+            });
+          },
+          { passive: true }
+        );
+      }
+    </script>
+  </body>
+</html>

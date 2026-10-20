@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaPanel from '../components/CtaPanel.astro';
+
+// ✏️ "Our Approach" steps. The rings spin on hover; the icon stays upright.
+const approach = [
+  { icon: 1, title: ['Strategy', 'Development'], text: 'We craft a plan that aligns with your hiring goals and brand.' },
+  { icon: 2, title: ['Targeted', 'Campaigns'], text: 'We connect with the right audience through smart targeting.' },
+  { icon: 3, title: ['Engaging', 'Content'], text: 'We create content that resonates with your ideal candidates.' },
+];
+---
+<Base title="Recruitment Marketing">
+  <section style="margin-top:50px;text-align:center;">
+    <div class="bg-blue" style="max-width:1320px;margin:0 auto;padding:clamp(20px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px;align-items:center;">
+      <div class="stack" style="text-align:left;padding:clamp(24px,4vw,50px);gap:20px;align-items:flex-start;">
+        <h1 class="h1 white">Find, Attract, and Hire Top Talent</h1>
+        <p class="lead white">We bring your employer brand to life and help you connect with the right people.</p>
+        <a href="/contact/" class="btn btn-lime">Contact Us</a>
+      </div>
+      <div class="dot-ring" style="width:min(90%,479px);">
+        <img class="dots" src="/assets/img/recruitment/header/dots.svg" alt="" />
+        <img class="mark" src="/assets/img/recruitment/header/logo.svg" alt="" style="width:21%;" />
+      </div>
+    </div>
+    <img src="/assets/img/recruitment/header/connection.svg" alt="" style="display:block;margin:-1px auto 0;" />
+    <div class="stack" style="max-width:1320px;margin:-1px auto 0;background:var(--lime);border-radius:20px;padding:clamp(24px,4vw,50px);gap:16px;">
+      <h2 class="h2" style="color:var(--ink);">Why Recruitment Marketing?</h2>
+      <p class="lead">It’s a competitive market for top talent. Backpack Digital Media helps you stand out with customized recruitment strategies that connect your business with the candidates you need.</p>
+    </div>
+  </section>
+
+  <section data-reveal style="margin-top:100px;">
+    <div class="container">
+      <h2 class="h2" style="text-align:center;margin-bottom:50px;">Our Approach</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px 24px;">
+        {approach.map((a) => (
+          <div class="stack" style="text-align:center;max-width:300px;margin:0 auto;align-items:center;gap:8px;">
+            <div class="ring">
+              <div class="ring-inner"><img src={`/assets/img/recruitment/approach/${a.icon}.svg`} alt="" /></div>
+            </div>
+            <h3 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#000;margin-top:8px;">{a.title[0]}<br />{a.title[1]}</h3>
+            <img src="/assets/img/recruitment/approach/line.svg" alt="" style="margin:8px 0;" />
+            <p style="font-size:20px;font-weight:300;">{a.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal style="margin-top:100px;">
+    <div class="container">
+      <div class="stack" style="text-align:center;margin-bottom:50px;gap:24px;">
+        <h2 class="h2">What You Can Expect</h2>
+        <p class="lead" style="line-height:normal;">From increased applications to better hires, we deliver results.</p>
+      </div>
+      <img src="/assets/img/recruitment/expect/main.svg" alt="Increased applications, better hires and a stronger employer brand" style="width:100%;display:block;" />
+    </div>
+  </section>
+
+  <CtaPanel variant="dark" title="Let’s Find Your Next Great Hire" text="" button="Contact Us" />
+</Base>

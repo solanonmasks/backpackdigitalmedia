@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import { contact, FORM_ENDPOINT } from '../data/site.js';
+
+// ✏️ Options in the "What do you need?" dropdown
+const needs = ['Leads from Meta or Google Ads', 'Video and content', 'Social media', 'A website', 'Recruitment', 'Not sure yet'];
+---
+<Base title="Contact" description="Tell us what you want to grow. You will hear back from a person, not an autoresponder.">
+  <section style="padding:80px 0 100px;">
+    <div class="container stack" style="gap:16px;">
+      <h1 class="h1" style="max-width:900px;text-wrap:balance;">Tell us what you want to grow.</h1>
+      <p style="font-size:clamp(20px,2.2vw,26px);font-weight:300;line-height:1.3;max-width:760px;">Fill this in and you will hear back from a person, not an autoresponder.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;margin-top:40px;align-items:start;">
+        <div>
+          <form class="form-panel contact-form" id="contact-form" data-endpoint={FORM_ENDPOINT} data-email={contact.email} method="post" action={FORM_ENDPOINT || undefined}>
+            <label>Name<input name="name" autocomplete="name" required /></label>
+            <label>Business name<input name="business" autocomplete="organization" required /></label>
+            <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" required /></label>
+            <label class="full">What do you need?
+              <select name="need" required>
+                <option value="">Choose one</option>
+                {needs.map((n) => <option>{n}</option>)}
+              </select>
+            </label>
+            <label class="full">
+              <span>Anything else we should know? <span style="font-weight:300;">(optional)</span></span>
+              <textarea name="notes" rows="5"></textarea>
+            </label>
+            <p class="form-error full" id="form-error" role="alert" hidden>Sorry, that didn’t send. Please try again, or email us at {contact.email}.</p>
+            <div class="full" style="display:flex;"><button type="submit">Send it</button></div>
+          </form>
+
+          <div class="form-panel stack" id="form-thanks" style="gap:12px;" hidden>
+            <h2 style="font-size:30px;font-weight:500;text-transform:uppercase;">Thanks, it’s on its way.</h2>
+            <p id="thanks-text" style="font-size:19px;font-weight:300;line-height:1.5;">We will get back to you soon.</p>
+          </div>
+        </div>
+
+        <div class="stack" style="gap:28px;padding-top:8px;">
+          <div class="stack" style="gap:6px;"><p class="contact-label">Email</p><a href={`mailto:${contact.email}`} class="contact-value">{contact.email}</a></div>
+          <div class="stack" style="gap:6px;"><p class="contact-label">Office</p><p class="contact-value">{contact.addressLine1}<br />{contact.addressLine2}</p></div>
+          <div class="stack" style="gap:6px;"><p class="contact-label">Hours</p><p class="contact-value">{contact.hoursDays}<br />{contact.hoursTime}</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Sends the contact form.
+  // - If FORM_ENDPOINT (src/data/site.js) is set, it posts to that form service.
+  // - If not, it opens the visitor's email app with the details filled in.
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const thanks = document.getElementById('form-thanks');
+  const thanksText = document.getElementById('thanks-text');
+  const error = document.getElementById('form-error');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const g = (k: string) => (data.get(k) || '').toString().trim();
+    const endpoint = form.dataset.endpoint;
+    const showThanks = (text: string) => {
+      if (thanksText) thanksText.textContent = text;
+      form.hidden = true;
+      if (thanks) thanks.hidden = false;
+    };
+
+    if (!endpoint) {
+      const body = [
+        'Name: ' + g('name'),
+        'Business: ' + g('business'),
+        'Email: ' + g('email'),
+        'Phone: ' + g('phone'),
+        'Needs: ' + g('need'),
+        '',
+        g('notes'),
+      ].join('\n');
+      window.location.href =
+        'mailto:' + form.dataset.email +
+        '?subject=' + encodeURIComponent('Website enquiry: ' + g('business')) +
+        '&body=' + encodeURIComponent(body);
+      showThanks('Your email app should have opened with your details filled in. Press send there and we will get back to you.');
+      return;
+    }
+
+    const button = form.querySelector('button');
+    if (button) button.disabled = true;
+    if (error) error.hidden = true;
+    try {
+      const res = await fetch(endpoint, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error('Request failed');
+      showThanks('We have your details and will get back to you soon.');
+    } catch {
+      if (error) error.hidden = false;
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+</script>

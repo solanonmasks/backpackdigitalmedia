@@ -1,0 +1,26 @@
+---
+import { contact, footerLinks } from '../data/site.js';
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div style="max-width:400px;">
+        <img src="/assets/img/logo-white.svg" alt="Backpack Digital Media" style="width:250px;display:block;" />
+        <p class="footer-blurb">Backpack Digital Media is a team of marketing experts who make it simple for businesses to get real results. From digital campaigns to finding the right talent, we specialize in solutions that drive real growth</p>
+        <div class="footer-details">
+          <p>{contact.addressLine1}, {contact.addressLine2}</p>
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <p>{contact.hoursDays}, {contact.hoursTime}</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:48px;">
+        <div class="footer-links">
+          {footerLinks.map((l) => <a href={l.href}>{l.label}</a>)}
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Copyright 2026, All Rights Reserved</p>
+    </div>
+  </div>
+</footer>

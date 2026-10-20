@@ -1,0 +1,24 @@
+---
+// "Ready to Take Your Business Further?" panel used at the bottom of pages.
+// variant="dark" (gradient button) or variant="blue" (white button + background art).
+const {
+  variant = 'dark',
+  title = 'Ready to Take Your Business Further?',
+  text = 'Let’s create a plan that works for you.',
+  button = 'Get Started',
+} = Astro.props;
+---
+<section data-reveal style="margin:100px 0;">
+  <div class="container">
+    <div class={`cta-panel ${variant === 'blue' ? 'bg-blue' : 'bg-dark'}`}>
+      {variant === 'blue' && (
+        <img src="/assets/img/home2/cta/background.svg" alt="" style="position:absolute;bottom:0;right:0;z-index:1;pointer-events:none;" />
+      )}
+      <div class="stack" style="gap:12px;position:relative;z-index:2;">
+        <h2>{title}</h2>
+        {text && <p>{text}</p>}
+      </div>
+      <a href="/contact/" class={`btn ${variant === 'blue' ? 'btn-white' : 'btn-gradient'}`}>{button}</a>
+    </div>
+  </div>
+</section>
