@@ -14,7 +14,7 @@ export const contact = {
 // To use a real form service (for example Formspree, Basin or Web3Forms),
 // paste the URL they give you here. The service must accept a POST with
 // form data and send it to contact@backpackdigitalmedia.com.
-export const FORM_ENDPOINT = '';
+export const FORM_ENDPOINT = 'https://formspree.io/f/mjygqezg';
 
 // Main navigation links (used in the top nav).
 export const navLinks = [

@@ -52,13 +52,12 @@ Text you're likely to edit is marked with ✏️ in the code.
 
 ## Contact form
 
-Right now `FORM_ENDPOINT` is empty, so pressing "Send it" opens the visitor's email app with their details filled in (same as the design prototype). To receive submissions directly, sign up for a form service such as Formspree, Basin or Web3Forms, point it at contact@backpackdigitalmedia.com, and paste the URL it gives you into `FORM_ENDPOINT`. The form then sends in the background and shows a thank-you or error message.
+The form sends to Formspree (`https://formspree.io/f/mjygqezg`, set as `FORM_ENDPOINT` in `src/data/site.js`). Formspree emails each enquiry to the address on your Formspree account, with the subject "Website enquiry: <business name>". Visitors see a thank-you message, or Formspree's error message if something goes wrong. If `FORM_ENDPOINT` is ever emptied (`''`), the form goes back to opening the visitor's email app instead.
 
 ## Still to do (from the design handoff)
 
 - Rewrite the six service sub-pages for the new service list (`src/data/services.js`).
 - Confirm the team roster (Garik and Ramneek).
-- Connect the contact form to a form service (see above).
 - Compress the large case-study PNGs in `public/assets/img/case-studies/` (about 14 MB total).
 - Check the Helvetica Neue font licence covers web use.
 
