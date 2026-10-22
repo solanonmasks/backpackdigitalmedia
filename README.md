@@ -47,7 +47,7 @@ Text you're likely to edit is marked with ✏️ in the code.
 | Recruitment Marketing | `/recruitment-marketing/` |
 | Service pages | `/services/social/`, `/services/branding/`, `/services/seo/`, `/services/sem/`, `/services/email/`, `/services/web/` |
 | Case Studies | `/case-studies/` |
-| Case study pages | `/case-studies/painting/`, `/case-studies/renovation/`, `/case-studies/bankyoursalary/` |
+| Case study pages | `/case-studies/painting/`, `/case-studies/renovation/`, `/case-studies/bankyoursalary/`, `/case-studies/cjhs/` |
 | Contact | `/contact/` |
 
 ## Contact form
@@ -63,4 +63,4 @@ The form sends to Formspree (`https://formspree.io/f/mjygqezg`, set as `FORM_END
 
 ## Design reference
 
-`design-handoff/` holds the original design file and notes. It is reference only and is not part of the live site.
+`design-handoff/` holds the original design file and notes (plus `design-handoff/cjhs-case-study/` for the CJHS case study). It is reference only and is not part of the live site.

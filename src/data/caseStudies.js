@@ -161,6 +161,53 @@ const bys = {
 
 raw['cs-bys'] = bys;
 
+// Calgary John Howard Society (website case study)
+const cjhs = {
+  descriptor: 'Calgary John Howard Society · Website rebuild',
+  headline: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
+  wallTitle: 'The site we built.',
+  hero: [
+    { after: '15 days', label: 'Kickoff to first design' },
+    { after: '12 weeks', label: 'Full review site, every page migrated' },
+    { after: '6 weeks', label: 'Until they hired us again' },
+  ],
+  summary: ['The Calgary John Howard Society (cjhs.ca) needed a site that worked for donors, for families and agencies looking for a specific program, and for Calgarians trying to understand what the organization does. Backpack Digital Media restructured the site around those audiences, designed it, built it and migrated every page. Six weeks after handoff, CJHS hired us again to build their annual report.'],
+  client: ['The Calgary John Howard Society is a 75-year-old nonprofit that helps reduce crime and keep Calgary communities safe, working with youth and adults involved in the justice system through housing, employment, mentorship, reintegration and restorative justice. More than a dozen programs, and a website that is the front door for every one of them.'],
+  beforeLabel: 'The starting point', beforeTitle: 'Organized by the org chart',
+  before: [
+    { p: 1, t: 'The old site had grown the way most nonprofit sites do: a page per program, added one at a time, organized by internal program names rather than by who was looking. Content had gone stale and the navigation had filled up with sections nobody used.' },
+    { p: 1, t: 'CJHS knew exactly who the site needed to serve:' },
+    { b: 1, t: 'Donors and funders who need a clear Donate button, fast' },
+    { b: 1, t: 'Referring agencies and families who need to find the right program without knowing what CJHS calls it' },
+    { b: 1, t: 'Engaged Calgarians who want to understand the why and the how, and who may become donors' },
+    { p: 1, t: 'What they needed was a partner who could turn that into a structure, a design and a finished site without pulling a small team away from their actual work.' },
+  ],
+  afterTitle: 'What Backpack did',
+  changedIntro: '',
+  changes: [
+    { title: 'Restructured the site around the visitor, not the org chart.', body: 'Programs are now grouped by who they serve: Culturally Diverse, Adult, Youth and Initiatives. A referring agency or a family member finds the right program in two clicks. Dead sections were removed and the hiring, volunteering and membership pages were consolidated into one clear hub.' },
+    { title: 'Designed it with the client in the room.', body: 'A real homepage design, not a wireframe, was presented to the Executive Director and the web committee 15 business days after kickoff, then refined in a shared Figma file where the team left comments directly.' },
+    { title: 'Built and migrated everything.', body: 'WordPress, optimized for mobile and speed, with a prominent Donate call to action, an impact stats counter and a stories feed on the homepage. We moved every page of content ourselves rather than handing over a frame and a to-do list.' },
+    { title: 'Handed it off so they could run it.', body: 'Staff were in the staging site editing their own text and images before launch, and their operations lead was walked through hosting and editing so there were no surprises after.' },
+  ],
+  resultsTitle: 'Results',
+  resultsNote: '',
+  cols: { c0: 'Milestone', c1: '', c2: 'Result', c3: '' }, fourCol: false,
+  rows: [
+    ['First design presented', '', '15 business days after kickoff', ''],
+    ['Full review site, every page migrated', '', '12 weeks', ''],
+    ['Repeat business: annual report microsite', '', 'Within 6 weeks of handoff', ''],
+    ['Still live, staff publishing their own stories', '', '2 years later', ''],
+  ],
+  callout: [], calloutBordered: true,
+  why: ['The client did the hard thinking about who the site was for. We built the structure around it and took everything else off their plate. A nonprofit team has a mission to run; reviewing and approving was all they had to do.'],
+  chips: [],
+  ctaTitle: 'Is your site organized around how you are structured, instead of how people look for you?',
+  ctaBody: 'That is the first thing we fix. Backpack designs and builds websites for organizations that need a site that serves several audiences at once.',
+};
+
+raw['cs-cjhs'] = cjhs;
+
 // Page address (slug) for each case study, plus the image shown on the index page.
 export const caseStudyList = [
   {
@@ -197,6 +244,18 @@ export const caseStudyList = [
       { after: '$115', label: 'Per registration' },
     ],
   },
+  {
+    slug: 'cjhs',
+    key: 'cs-cjhs',
+    image: '/assets/img/case-studies/cjhs/home.png',
+    imageAlt: 'cjhs.ca homepage',
+    imageCrop: true, // tall screenshot: crop to a square from the top-left
+    title: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
+    stats: [
+      { after: '15 days', label: 'To first design' },
+      { after: '12 weeks', label: 'To full review site' },
+    ],
+  },
 ];
 
 // Fills in defaults so every page template gets the same shape of data.
@@ -207,10 +266,11 @@ export function getCaseStudy(key) {
     ...r,
     beforeLabel: r.beforeLabel || 'Before',
     afterTitle: r.afterTitle || 'What Backpack changed',
+    wallTitle: r.wallTitle || 'The ads that did it.',
     fourCol,
     insight: r.insight || [],
     compare: r.compare || [],
-    calloutParas: Array.isArray(r.callout) ? r.callout : [r.callout],
+    calloutParas: (Array.isArray(r.callout) ? r.callout : [r.callout]).filter(Boolean),
     rows: r.rows.map((row) => ({ m: row[0], a: row[1], b: row[2], c: row[3], key: !!row[4] })),
   };
 }

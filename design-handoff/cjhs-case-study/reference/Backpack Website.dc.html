@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Backpack Digital Media | Marketing That Moves You Forward</title>
+<link rel="icon" href="assets/img/logo.svg">
+<style>
+@font-face{font-family:'Helvetica Neue';src:url('assets/font/HelveticaNeueLight.otf') format('opentype');font-weight:300;}
+@font-face{font-family:'Helvetica Neue';src:url('assets/font/HelveticaNeueRoman.otf') format('opentype');font-weight:400;}
+@font-face{font-family:'Helvetica Neue';src:url('assets/font/HelveticaNeueMedium.otf') format('opentype');font-weight:500;}
+@font-face{font-family:'Helvetica Neue';src:url('assets/font/HelveticaNeueBold.otf') format('opentype');font-weight:700;}
+html,body{margin:0;padding:0;overflow-x:hidden;background:#fff;}
+*{box-sizing:border-box;}
+body{font-family:'Helvetica Neue',sans-serif;color:#282828;}
+h1,h2,h3,h4,p{margin:0;}
+a{color:#5D84ED;text-decoration:none;}
+a:hover{color:#282828;}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#5D84ED"/><text x="50" y="66" font-family="Helvetica,Arial" font-size="44" font-weight="700" fill="#CEED5D" text-anchor="middle">B</text></svg></template>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:#fff;">
+
+<nav style="position:sticky;top:0;z-index:999;background:#F0F0F0;padding:{{ navPad }};transition:padding .5s ease-in-out;">
+  <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="#home" onClick="{{ goHome }}" style="display:flex;flex-shrink:0;"><img src="assets/img/logo.svg" alt="Backpack Digital Media" style="height:46px;display:block;"></a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;gap:32px;margin-left:auto;">
+        <a href="#home" onClick="{{ goHome }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Home</a>
+        <a href="#about" onClick="{{ goAbout }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">About Us</a>
+        <a href="#marketing" onClick="{{ goMarketing }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Digital Marketing</a>
+        <a href="#recruitment" onClick="{{ goRecruitment }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Recruitment Marketing</a>
+        <a href="#cases" onClick="{{ goCases }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Case Studies</a>
+      </div>
+      <div style="margin-left:auto;display:flex;"><a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;white-space:nowrap;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Contact Us</a></div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ toggleMenu }}" aria-label="Menu" style="background:none;border:none;width:44px;height:44px;position:relative;cursor:pointer;padding:0;">
+        <span style="position:absolute;left:7px;width:30px;height:2px;background:#000;transition:all .3s ease-in-out;top:{{ bars.t }};transform:{{ bars.r1 }};"></span>
+        <span style="position:absolute;left:7px;top:21px;width:30px;height:2px;background:#000;transition:all .3s ease-in-out;opacity:{{ bars.mid }};"></span>
+        <span style="position:absolute;left:7px;width:30px;height:2px;background:#000;transition:all .3s ease-in-out;top:{{ bars.b }};transform:{{ bars.r2 }};"></span>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width:1320px;margin:0 auto;padding:12px 12px 8px;display:flex;flex-direction:column;gap:4px;align-items:flex-start;">
+      <a href="#home" onClick="{{ goHome }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Home</a>
+      <a href="#about" onClick="{{ goAbout }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">About Us</a>
+      <a href="#marketing" onClick="{{ goMarketing }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Digital Marketing</a>
+      <a href="#recruitment" onClick="{{ goRecruitment }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Recruitment Marketing</a>
+        <a href="#cases" onClick="{{ goCases }}" style="font-size:20px;font-weight:400;color:#282828;padding:8px 0;white-space:nowrap;" style-hover="color:#5D84ED">Case Studies</a>
+      <div style="padding-top:8px;display:flex;"><a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;white-space:nowrap;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Contact Us</a></div>
+    </div>
+  </sc-if>
+</nav>
+
+<main style="flex:1;">
+
+<!-- ================= HOME ================= -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Home" style="margin-top:100px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:40px 24px;align-items:center;">
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#000;text-transform:uppercase;max-width:500px;line-height:1.1;">Marketing That <span ref="{{ movesRef }}" style="font-style:italic;color:#5D84ED;display:inline-block;">Moves</span> You Forward</h1>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;line-height:1.3;">We help companies grow through innovative marketing strategies and targeted recruitment solutions</p>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;">
+          <a href="#marketing" onClick="{{ goMarketing }}" style="background:#5D84ED;color:#fff;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#fff">Discover Our Services</a>
+          <a href="#contact" style="background:#282828;color:#fff;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#fff">Let’s Talk</a>
+        </div>
+      </div>
+      <x-import component-from-global-scope="bp-hero" from="./hero.js" hint-size="100%,405px" style="width:100%;display:block;"></x-import>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:100px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+      <img src="assets/img/home/clients/0.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/1.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/2.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/3.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/4.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/5.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+      <img src="assets/img/home/clients/6.png" alt="" style="width:170px;max-width:calc(33% - 10px);display:block;">
+    </div>
+  </section>
+
+  <section data-reveal="" style="background:#282828;margin-top:100px;padding:80px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:40px 24px;align-items:center;">
+      <div style="position:relative;width:min(100%,500px);aspect-ratio:1;margin:0 auto;">
+        <img ref="{{ spinRef }}" src="assets/img/home/who_we_are/dots.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;">
+        <img src="assets/img/home/who_we_are/white-logo.svg" alt="" style="position:absolute;top:50%;left:50%;width:18.4%;transform:translate(-50%,-50%);">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;">Who We Are</h2>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;line-height:1.3;">Backpack Digital Media is a team of marketing experts who make it simple for businesses to get real results. From digital campaigns to finding the right talent, we specialize in solutions that drive real growth</p>
+        <a href="#about" onClick="{{ goAbout }}" style="background:linear-gradient(to right,#5D84ED 0%,#CEED5D 100%);color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Learn More About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:70px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;">
+      <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:50px;">
+        <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">What we do</h2>
+        <p style="font-size:22px;font-weight:300;color:#282828;">Six things, done properly. Pick one or let us build the stack.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:24px;">
+        <a href="#sem" onClick="{{ sub.go_sem }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">01</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">Meta and Google Ads</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">Campaigns built around a clear offer and creative that stops the scroll, whether the goal is bookings, enquiries, foot traffic or sales. Measured in results and cost per result, reported monthly.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+        <a href="#branding" onClick="{{ sub.go_branding }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">02</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">Video and content production</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">On-site shoots with your people, your space and your product, edited into ads, reels and the content that makes a brand feel real. The raw material for everything else we run.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+        <a href="#social" onClick="{{ sub.go_social }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">03</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">Social media management</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">Strategy, monthly calendars, posting and daily community management in your voice. A presence that looks like someone is home, because someone is.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+        <a href="#web" onClick="{{ sub.go_web }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">04</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">Websites</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">Fast, mobile-first sites designed around what your customer came to do: book, buy, call or enquire. Delivered with hosting and handed over with the keys.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+        <a href="#seo" onClick="{{ sub.go_seo }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">05</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">SEO and local search</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">Google Business Profile, reviews, on-page work and local content, so customers find you when they search as well as when they scroll.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+        <a href="#recruitment" onClick="{{ goRecruitment }}" style="background:#F0F0F0;border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;transition:all .3s ease;" style-hover="transform:translateY(-4px);background:#5D84ED;color:#fff">
+          <span style="font-size:18px;font-weight:500;color:inherit;opacity:.6;">06</span>
+          <h3 style="font-size:clamp(24px,2.4vw,30px);font-weight:500;text-transform:uppercase;line-height:1.1;color:inherit;">Recruitment marketing</h3>
+          <p style="font-size:19px;font-weight:300;line-height:1.4;color:inherit;flex:1;text-wrap:pretty;">Indeed, Meta and purpose-built platforms for employers who need qualified applicants at volume, or need people to move for the role. See BankYourSalary.</p>
+          <span style="font-size:18px;font-weight:400;color:inherit;">Learn more →</span>
+        </a>
+      </div>
+      <div style="display:flex;margin-top:50px;">
+        <a href="#contact" onClick="{{ goContact }}" style="background:#5D84ED;color:#fff;font-size:clamp(20px,2.2vw,26px);font-weight:400;padding:10px 26px;border-radius:999px;transition:all .3s ease;" style-hover="transform:translateY(-2px);opacity:.85;color:#fff">Not sure where to start? Book a call.</a>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="background:#282828;margin-top:100px;padding:90px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:20px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;max-width:900px;line-height:1.1;text-wrap:balance;">We learn your business before we market it.</h2>
+      <p style="font-size:clamp(20px,2vw,24px);font-weight:300;color:#fff;line-height:1.4;max-width:820px;text-wrap:pretty;">Most agencies hand you a questionnaire and a template. We spend the first stretch of every engagement doing something closer to a job shadow.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 32px;margin-top:40px;">
+        <div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #CEED5D;padding-top:20px;"><span style="font-size:40px;font-weight:500;color:#CEED5D;line-height:1;">1</span><h3 style="font-size:24px;font-weight:500;color:#fff;">We get inside it.</h3><p style="font-size:18px;font-weight:300;color:#fff;line-height:1.5;">We sit with you, your staff and your numbers. How a customer finds you, what they ask, what they pay, what you turn away. By the end we can explain your business the way you would.</p></div>
+        <div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #CEED5D;padding-top:20px;"><span style="font-size:40px;font-weight:500;color:#CEED5D;line-height:1;">2</span><h3 style="font-size:24px;font-weight:500;color:#fff;">We find the thing that makes you different.</h3><p style="font-size:18px;font-weight:300;color:#fff;line-height:1.5;">Your customers already know why they chose you over the competition. Most businesses have never put it into words. We find it, test it against what your market actually responds to, and make it the foundation of your positioning, your creative and your offer.</p></div>
+        <div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #CEED5D;padding-top:20px;"><span style="font-size:40px;font-weight:500;color:#CEED5D;line-height:1;">3</span><h3 style="font-size:24px;font-weight:500;color:#fff;">We write the strategy for you alone.</h3><p style="font-size:18px;font-weight:300;color:#fff;line-height:1.5;">Not a package, not a tier. The channels, the offer, the creative and the budget are set by what we learned in the first two steps, and we walk you through the reasoning before anything runs.</p></div>
+        <div style="display:flex;flex-direction:column;gap:12px;border-top:2px solid #CEED5D;padding-top:20px;"><span style="font-size:40px;font-weight:500;color:#CEED5D;line-height:1;">4</span><h3 style="font-size:24px;font-weight:500;color:#fff;">We become part of your team.</h3><p style="font-size:18px;font-weight:300;color:#fff;line-height:1.5;">We are an extension of your in-house team, and you can always reach us. Most of the time you will not need to. We are already in your campaigns, testing, refining and finding the next gain, so every month is better than the last. Your growth is the job.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin:100px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <div style="background:#282828;padding:clamp(50px,6vw,80px);border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <h4 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;">Ready to Take Your Business Further?</h4>
+          <p style="font-size:20px;font-weight:300;color:#fff;">Let’s create a plan that works for you.</p>
+        </div>
+        <a href="#contact" style="background:linear-gradient(to right,#5D84ED 0%,#CEED5D 100%);color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;white-space:nowrap;" style-hover="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Get Started</a>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= ABOUT ================= -->
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="About Us" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;background:#282828 url(assets/img/home2/header/main.png) no-repeat center center;background-size:cover;padding:clamp(40px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:center;">
+      <div style="padding:clamp(24px,4vw,50px);display:flex;flex-direction:column;gap:24px;align-items:flex-start;">
+        <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#fff;text-transform:uppercase;line-height:1.1;">Your partner in <span style="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">growth-focused</span> marketing.</h1>
+        <a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Let's Grow Together</a>
+      </div>
+      <div style="width:80%;"><img src="assets/img/home2/header/logo.svg" alt="" style="width:100%;display:block;"></div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">Who We Are</h2>
+      <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;line-height:1.3;">Backpack is a Vancouver marketing agency built by people who have spent their careers selling and building marketing for businesses of every kind. We run campaigns, content, websites and recruitment advertising for clients across Canada and the US, from restaurants and retailers to manufacturers, senior living operators and national employers, and for the past two years we have also been the production team behind other agencies, building the work they sell to their clients. That side of the business taught us to deliver on scope, on time, every time. The direct side is where we get to go deeper: learning a business from the inside, finding what makes it different, and building marketing around that instead of around a template.</p>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:24px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">Core Values</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px;">
+        <div style="background:#5D84ED;border:1px solid #CEED5D;padding:25px;border-radius:10px;min-height:300px;">
+          <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;"><img src="assets/img/home2/values/1.svg" alt="" style="width:100%;height:100%;object-fit:contain;transition:transform 3s ease;" style-hover="transform:rotate(360deg)"></div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+            <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#fff;">Clarity:</h4>
+            <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;">We make it simple.</p>
+          </div>
+        </div>
+        <div style="background:#5D84ED;border:1px solid #CEED5D;padding:25px;border-radius:10px;min-height:300px;">
+          <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;"><img src="assets/img/home2/values/2.svg" alt="" style="width:100%;height:100%;object-fit:contain;transition:transform 3s ease;" style-hover="transform:rotate(360deg)"></div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+            <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#fff;">Collaboration:</h4>
+            <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;">We work as your partner.</p>
+          </div>
+        </div>
+        <div style="background:#5D84ED;border:1px solid #CEED5D;padding:25px;border-radius:10px;min-height:300px;">
+          <div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;"><img src="assets/img/home2/values/3.svg" alt="" style="width:100%;height:100%;object-fit:contain;transition:transform 3s ease;" style-hover="transform:rotate(360deg)"></div>
+          <div style="margin-top:20px;display:flex;flex-direction:column;gap:12px;">
+            <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#fff;">Results:</h4>
+            <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;">We focus on what matters —your growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:50px;background:#282828;padding:100px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <div style="max-width:1080px;margin:0 auto 50px;text-align:center;display:flex;flex-direction:column;gap:24px;">
+        <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;">Meet the Team Behind Backpack Digital Media</h2>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;">We’re a team of experts committed to helping your business grow through smart marketing and creative solutions.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,560px),1fr));gap:25px 24px;">
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/1.png" alt="Iqbal" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Iqbal</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">President</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">Iqbal is the founder of Backpack Digital Media. With 8+ years in the industry, he sets the strategic direction for the agency, ensuring we deliver impactful results for every client. His focus on collaboration and innovation is at the heart of everything we do.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/2.png" alt="Garik" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Garik</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">Creative Director</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">As Creative Director, Garik brings bold ideas to life. He leads the creative vision for all projects, ensuring our designs and campaigns don’t just look good but achieve results. Garik’s talent for turning ideas into engaging visuals makes him a driving force for client success.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/3.png" alt="Ramneek" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Ramneek</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">Graphic Designer</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">Ramneek is our go-to graphic designer who transforms concepts into stunning visuals. From branding materials to social media graphics, Ramneek combines creativity with precision to deliver designs that captivate and inspire.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/4.png" alt="Steven" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Steven</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">Senior Account Manager</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">Steven ensures our clients are always supported and their goals are achieved. With a strong background in client management and strategy, he’s the bridge between ideas and execution, ensuring projects stay on track and deliver results.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/5.png" alt="Ana" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Ana</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">Finance Director</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">Ana keeps Backpack Digital Media running smoothly behind the scenes. As Finance Director, she ensures every dollar spent drives value for our clients and the agency. Her sharp eye for numbers and strategic mindset keeps us grounded and growing.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:20px;flex-wrap:wrap;">
+          <div style="border:5px solid #5D84ED;border-radius:500px;width:clamp(100px,14vw,200px);height:clamp(100px,14vw,200px);flex-shrink:0;"><img src="assets/img/home2/team/6.png" alt="Dan Ma" style="padding:10px;width:100%;height:100%;object-fit:cover;display:block;"></div>
+          <div style="flex:1;min-width:220px;max-width:400px;">
+            <h4 style="font-size:25px;font-weight:500;color:#CEED5D;margin-bottom:8px;">Dan Ma</h4>
+            <p style="font-size:20px;font-weight:300;color:#A4A4A4;">Partner Success Advisor</p>
+            <hr style="border:0;border-top:1px solid #CEED5D;opacity:.25;margin:16px 0;">
+            <p style="font-size:16px;font-weight:300;color:#fff;line-height:1.5;">Dan is the first person new clients meet and the one they keep hearing from. With years in local business advertising, he understands what owners actually need, builds the right plan with them, and stays on the account to make sure it delivers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin:100px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <div style="background:#5D84ED;padding:clamp(50px,6vw,80px);border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden;">
+        <img src="assets/img/home2/cta/background.svg" alt="" style="position:absolute;bottom:0;right:0;z-index:1;pointer-events:none;">
+        <div style="display:flex;flex-direction:column;gap:12px;position:relative;z-index:2;">
+          <h4 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;">Ready to Take Your Business Further?</h4>
+          <p style="font-size:20px;font-weight:300;color:#fff;">Let’s create a plan that works for you.</p>
+        </div>
+        <a href="#contact" style="position:relative;z-index:2;background:#fff;border:4px solid #fff;color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;white-space:nowrap;" style-hover="background:transparent;color:#fff;transform:scale(1.01) translateY(-2px)">Get Started</a>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= DIGITAL MARKETING ================= -->
+<sc-if value="{{ isMarketing }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Digital Marketing" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:40px;">
+      <div style="text-align:center;display:flex;flex-direction:column;gap:16px;">
+        <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#000;text-transform:uppercase;line-height:1.1;">Tailored Marketing<br><span style="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Solutions</span></h1>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;">Bringing you strategies that work.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:24px;">
+        <div style="background:#5D84ED;padding:30px;border-radius:20px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+          <h3 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;line-height:1.1;">Digital<br>Marketing</h3>
+          <p style="font-size:22px;font-weight:300;color:#fff;">We create data-driven digital campaigns that help you connect with the right audience, increase engagement, and drive growth</p>
+          <a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Let’s Talk Marketing</a>
+        </div>
+        <div style="background:#CEED5D;padding:30px;border-radius:20px;display:flex;flex-direction:column;gap:16px;align-items:flex-start;">
+          <h3 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#282828;text-transform:uppercase;line-height:1.1;">Recruitment<br>Marketing</h3>
+          <p style="font-size:22px;font-weight:300;color:#282828;">Hiring the right people is critical. We help you attract top talent through targeted campaigns, engaging content, and smart outreach.</p>
+          <a href="#recruitment" onClick="{{ goRecruitment }}" style="background:#282828;color:#fff;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#fff">Let’s Talk Hiring</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:50px;">
+    <div style="max-width:800px;margin:0 auto 60px;padding:0 12px;text-align:center;display:flex;flex-direction:column;gap:16px;">
+      <span style="font-size:18px;color:#282828;font-weight:700;">Our Services</span>
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">Tailored Marketing Solutions to Fuel Your <span style="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Growth</span></h2>
+      <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;">We offer tailored marketing solutions to help you hit your goals.</p>
+    </div>
+    <div style="background:#E4ECFF;border-top-left-radius:28px;border-top-right-radius:28px;padding:100px 12px;">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:20px 24px;justify-items:center;">
+        <div onMouseEnter="{{ svc.e1 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#social" onClick="{{ sub.go_social }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-1.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-1-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o1 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">Digital Marketing</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Grow your audience and engage customers where they spend the most time.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+        <div onMouseEnter="{{ svc.e2 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#branding" onClick="{{ sub.go_branding }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-2.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-2-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o2 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">Branding Services</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Build a memorable brand that stands out.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+        <div onMouseEnter="{{ svc.e3 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#seo" onClick="{{ sub.go_seo }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-3.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-3-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o3 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">SEO (Search Engine Optimization)</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Improve your search rankings and get discovered by the right people.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+        <div onMouseEnter="{{ svc.e4 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#sem" onClick="{{ sub.go_sem }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-4.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-4-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o4 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">SEM (Search Engine Marketing)</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Drive traffic and leads with paid search campaigns.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+        <div onMouseEnter="{{ svc.e5 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#email" onClick="{{ sub.go_email }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-5.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-5-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o5 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">Email Marketing</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Engage your audience with strategic email campaigns.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+        <div onMouseEnter="{{ svc.e6 }}" onMouseLeave="{{ svc.leave }}" style="background:linear-gradient(to bottom,#FDFDFD 0%,#5D84ED 100%);border-radius:28px;padding:2px;width:100%;max-width:350px;">
+          <a href="#web" onClick="{{ sub.go_web }}" style="background:#fff;min-height:400px;padding:15px;text-align:center;border-radius:28px;display:flex;flex-direction:column;align-items:center;gap:16px;color:#282828;">
+            <div style="position:relative;width:100px;height:100px;flex-shrink:0;"><img src="assets/img/marketing/services/icon-6.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;"><img src="assets/img/marketing/services/icon-6-hover.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s;opacity:{{ svc.o6 }};"></div>
+            <h4 style="margin-top:24px;font-size:28px;font-weight:500;color:#000;">Website Development</h4>
+            <p style="font-size:20px;font-weight:300;color:#9F9F9F;flex:1;">Create a beautiful, functional website that drives results.</p>
+            <span style="font-size:20px;color:#282828;text-decoration:underline;display:flex;align-items:center;gap:5px;">Learn More <img src="assets/img/marketing/services/arrow-right.svg" alt=""></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= RECRUITMENT ================= -->
+<sc-if value="{{ isRecruitment }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Recruitment Marketing" style="margin-top:50px;text-align:center;">
+    <div style="max-width:1320px;margin:0 auto;background:#5D84ED;padding:clamp(20px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px;align-items:center;">
+      <div style="text-align:left;padding:clamp(24px,4vw,50px);display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#fff;text-transform:uppercase;line-height:1.1;">Find, Attract, and Hire Top Talent</h1>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;line-height:1.3;">We bring your employer brand to life and help you connect with the right people.</p>
+        <a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Contact Us</a>
+      </div>
+      <div style="position:relative;width:min(90%,479px);aspect-ratio:1;margin:0 auto;">
+        <img ref="{{ spinRef }}" src="assets/img/recruitment/header/dots.svg" alt="" style="position:absolute;inset:0;width:100%;height:100%;">
+        <img src="assets/img/recruitment/header/logo.svg" alt="" style="position:absolute;top:50%;left:50%;width:21%;transform:translate(-50%,-50%);">
+      </div>
+    </div>
+    <img src="assets/img/recruitment/header/connection.svg" alt="" style="display:block;margin:-1px auto 0;">
+    <div style="max-width:1320px;margin:-1px auto 0;background:#CEED5D;border-radius:20px;padding:clamp(24px,4vw,50px);display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#282828;text-transform:uppercase;">Why Recruitment Marketing?</h2>
+      <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;line-height:1.3;">It’s a competitive market for top talent. Backpack Digital Media helps you stand out with customized recruitment strategies that connect your business with the candidates you need.</p>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:100px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;text-align:center;margin-bottom:50px;">Our Approach</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px 24px;">
+        <div style="text-align:center;max-width:300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div ref="{{ ringRef }}" style="width:150px;height:150px;border-radius:50%;padding:5px;background:linear-gradient(-134deg,#5D84ED 0%,#CEED5D 100%);border:5px solid #282828;display:flex;">
+            <div style="width:100%;height:100%;background:#282828;border-radius:50%;padding:25px;"><img src="assets/img/recruitment/approach/1.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+          </div>
+          <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#000;margin-top:8px;">Strategy<br>Development</h4>
+          <img src="assets/img/recruitment/approach/line.svg" alt="" style="margin:8px 0;">
+          <p style="font-size:20px;font-weight:300;color:#282828;">We craft a plan that aligns with your hiring goals and brand.</p>
+        </div>
+        <div style="text-align:center;max-width:300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div ref="{{ ringRef }}" style="width:150px;height:150px;border-radius:50%;padding:5px;background:linear-gradient(-134deg,#5D84ED 0%,#CEED5D 100%);border:5px solid #282828;display:flex;">
+            <div style="width:100%;height:100%;background:#282828;border-radius:50%;padding:25px;"><img src="assets/img/recruitment/approach/2.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+          </div>
+          <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#000;margin-top:8px;">Targeted<br>Campaigns</h4>
+          <img src="assets/img/recruitment/approach/line.svg" alt="" style="margin:8px 0;">
+          <p style="font-size:20px;font-weight:300;color:#282828;">We connect with the right audience through smart targeting.</p>
+        </div>
+        <div style="text-align:center;max-width:300px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div ref="{{ ringRef }}" style="width:150px;height:150px;border-radius:50%;padding:5px;background:linear-gradient(-134deg,#5D84ED 0%,#CEED5D 100%);border:5px solid #282828;display:flex;">
+            <div style="width:100%;height:100%;background:#282828;border-radius:50%;padding:25px;"><img src="assets/img/recruitment/approach/3.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></div>
+          </div>
+          <h4 style="font-size:clamp(25px,2.6vw,30px);font-weight:500;color:#000;margin-top:8px;">Engaging<br>Content</h4>
+          <img src="assets/img/recruitment/approach/line.svg" alt="" style="margin:8px 0;">
+          <p style="font-size:20px;font-weight:300;color:#282828;">We create content that resonates with your ideal candidates.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin-top:100px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <div style="text-align:center;margin-bottom:50px;display:flex;flex-direction:column;gap:24px;">
+        <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">What You Can Expect</h2>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;">From increased applications to better hires, we deliver results.</p>
+      </div>
+      <img src="assets/img/recruitment/expect/main.svg" alt="" style="width:100%;display:block;">
+    </div>
+  </section>
+
+  <section data-reveal="" style="margin:100px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <div style="background:#282828;padding:clamp(50px,6vw,80px);border-radius:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;">
+        <h4 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#fff;text-transform:uppercase;">Let’s Find Your Next Great Hire</h4>
+        <a href="#contact" style="background:linear-gradient(to right,#5D84ED 0%,#CEED5D 100%);color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;white-space:nowrap;" style-hover="background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= SERVICE SUB-PAGES (content lives in the "subPages" list in the logic below) ================= -->
+<sc-if value="{{ isSub }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Service Page" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;background:#5D84ED;padding:clamp(50px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px;align-items:center;">
+      <div data-reveal="" style="padding:clamp(24px,4vw,50px);display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+        <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#fff;text-transform:uppercase;line-height:1.1;">{{ sub.title }}</h1>
+        <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#fff;line-height:1.3;">{{ sub.subtitle }}</p>
+        <a href="#contact" style="background:#CEED5D;color:#282828;font-size:clamp(20px,2.2vw,28px);font-weight:400;padding:5px 14px;border-radius:10px;transition:all .3s ease;" style-hover="transform:scale(1.01) translateY(-2px);opacity:.8;color:#282828">{{ sub.button }}</a>
+      </div>
+      <div data-reveal="" style="width:min(80%,300px);aspect-ratio:1;margin:0 auto;"><sc-if value="{{ sub.is_social }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/1.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if><sc-if value="{{ sub.is_branding }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/2.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if><sc-if value="{{ sub.is_seo }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/3.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if><sc-if value="{{ sub.is_sem }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/4.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if><sc-if value="{{ sub.is_email }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/5.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if><sc-if value="{{ sub.is_web }}" hint-placeholder-val="{{ false }}"><img src="assets/img/marketing_sub_pages/6.svg" alt="" style="width:100%;height:100%;object-fit:contain;display:block;"></sc-if></div>
+    </div>
+  </section>
+  <section data-reveal="" style="margin-top:50px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:16px;">
+      <h2 style="font-size:clamp(30px,3.4vw,42px);font-weight:500;color:#000;text-transform:uppercase;">What We Do</h2>
+      <p style="font-size:clamp(20px,2.2vw,28px);font-weight:300;color:#282828;line-height:1.3;">{{ sub.what }}</p>
+    </div>
+  </section>
+  <section style="margin:50px 0 70px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+      <h2 data-reveal="" style="display:inline-block;font-size:clamp(30px,3.4vw,42px);font-weight:500;text-transform:uppercase;background:linear-gradient(to right,#CEED5D 0%,#5D84ED 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;">Key Highlights</h2>
+      <div style="margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px;">
+        <sc-for list="{{ sub.highlights }}" as="hl" hint-placeholder-count="4">
+          <div data-reveal="" style="padding:3px;border-radius:10px;background:linear-gradient(116deg,#CEED5D 0%,#5D84ED 100%);min-height:250px;display:flex;">
+            <div style="flex:1;background:#fff;border-radius:8px;padding:35px;display:flex;flex-direction:column;gap:10px;">
+              <img src="assets/img/marketing_sub_pages/check.svg" alt="" style="width:40px;height:40px;object-fit:contain;align-self:flex-start;">
+              <h3 style="font-size:28px;font-weight:500;color:#000;line-height:1.2;">{{ hl }}</h3>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= CASE STUDIES INDEX ================= -->
+<sc-if value="{{ isCases }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Case Studies" style="background:#282828;padding:96px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:20px;">
+      <p style="font-size:18px;color:#CEED5D;text-transform:uppercase;letter-spacing:.06em;">Case Studies</p>
+      <h1 style="font-size:clamp(40px,6vw,72px);font-weight:700;color:#fff;text-transform:uppercase;line-height:1;max-width:900px;">Same budget. More customers.</h1>
+    </div>
+  </section>
+  <section style="padding:96px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:32px;">
+      <a href="#cs-painting" onClick="{{ goCsPainting }}" data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);align-items:center;background:#F5F5F5;border-radius:20px;padding:clamp(20px,3vw,40px);color:#282828;transition:transform .3s ease;" style-hover="transform:translateY(-4px);color:#282828">
+        <img src="assets/img/case-studies/painting/feed.png" alt="Goodbye, beige ad creative" style="width:100%;aspect-ratio:1/1;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);">
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+          <p style="font-size:16px;color:#5D84ED;text-transform:uppercase;font-weight:500;letter-spacing:.04em;">California painting contractor · Meta Ads</p>
+          <h2 style="font-size:clamp(30px,3.2vw,44px);font-weight:700;text-transform:uppercase;line-height:1.02;text-wrap:balance;">$15,000+ in booked painting jobs from under $1,000 in Meta ad spend</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;">
+                <span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;"><span style="font-size:18px;font-weight:500;opacity:.7;">2 →</span> 17</span>
+                <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Leads</span>
+              </div>
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;">
+                <span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;"><span style="font-size:18px;font-weight:500;opacity:.7;">$173 →</span> $58</span>
+                <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Cost per lead</span>
+              </div>
+          </div>
+          <span style="background:#282828;color:#fff;font-size:20px;padding:10px 22px;border-radius:999px;margin-top:8px;">Read the case study →</span>
+        </div>
+      </a>
+      <a href="#cs-reno" onClick="{{ goCsReno }}" data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);align-items:center;background:#F5F5F5;border-radius:20px;padding:clamp(20px,3vw,40px);color:#282828;transition:transform .3s ease;" style-hover="transform:translateY(-4px);color:#282828">
+        <img src="assets/img/case-studies/reno/a.png" alt="The pink tub is gone ad creative" style="width:100%;aspect-ratio:1/1;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);">
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+          <p style="font-size:16px;color:#5D84ED;text-transform:uppercase;font-weight:500;letter-spacing:.04em;">Montana renovation contractor · Meta Ads</p>
+          <h2 style="font-size:clamp(30px,3.2vw,44px);font-weight:700;text-transform:uppercase;line-height:1.02;text-wrap:balance;">Same monthly budget, six times the leads</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;">
+                <span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;"><span style="font-size:18px;font-weight:500;opacity:.7;">4 →</span> ~23</span>
+                <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Leads per month</span>
+              </div>
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;">
+                <span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;"><span style="font-size:18px;font-weight:500;opacity:.7;">$343 →</span> $56</span>
+                <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Cost per lead</span>
+              </div>
+          </div>
+          <span style="background:#282828;color:#fff;font-size:20px;padding:10px 22px;border-radius:999px;margin-top:8px;">Read the case study →</span>
+        </div>
+      </a>
+<a href="#cs-bys" onClick="{{ goCsBys }}" data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);align-items:center;background:#F5F5F5;border-radius:20px;padding:clamp(20px,3vw,40px);color:#282828;transition:transform .3s ease;" style-hover="transform:translateY(-4px);color:#282828">
+        <img src="assets/img/case-studies/bys/retail-1x1.png" alt="Retail Store Manager comparison ad" style="width:100%;aspect-ratio:1/1;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);">
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+          <p style="font-size:16px;color:#5D84ED;text-transform:uppercase;font-weight:500;letter-spacing:.04em;">BankYourSalary · Recruitment platform</p>
+          <h2 style="font-size:clamp(30px,3.2vw,44px);font-weight:700;text-transform:uppercase;line-height:1.02;text-wrap:balance;">43 relocation-ready candidates in 11 weeks, at $115 each</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;"><span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;">43</span><span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Registrations</span></div>
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;"><span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;">$115</span><span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">Per registration</span></div>
+          </div>
+          <span style="background:#282828;color:#fff;font-size:20px;padding:10px 22px;border-radius:999px;margin-top:8px;">Read the case study →</span>
+        </div>
+      </a>
+      <a href="#cs-cjhs" onClick="{{ goCsCjhs }}" data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,64px);align-items:center;background:#F5F5F5;border-radius:20px;padding:clamp(20px,3vw,40px);color:#282828;transition:transform .3s ease;" style-hover="transform:translateY(-4px);color:#282828">
+        <div style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);overflow:hidden;aspect-ratio:1/1;"><img src="assets/img/case-studies/cjhs/home.png" alt="cjhs.ca homepage" style="width:100%;height:100%;object-fit:cover;object-position:left top;display:block;"></div>
+        <div style="display:flex;flex-direction:column;gap:20px;align-items:flex-start;">
+          <p style="font-size:16px;color:#5D84ED;text-transform:uppercase;font-weight:500;letter-spacing:.04em;">Calgary John Howard Society · Website rebuild</p>
+          <h2 style="font-size:clamp(30px,3.2vw,44px);font-weight:700;text-transform:uppercase;line-height:1.02;text-wrap:balance;">A 75-year-old nonprofit, three audiences, one website that finally serves all of them</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;">
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;"><span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;">15 days</span><span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">To first design</span></div>
+              <div style="background:#CEED5D;border-radius:14px;padding:14px 18px;display:flex;flex-direction:column;gap:4px;"><span style="font-size:32px;font-weight:700;line-height:1;white-space:nowrap;">12 weeks</span><span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;">To full review site</span></div>
+          </div>
+          <span style="background:#282828;color:#fff;font-size:20px;padding:10px 22px;border-radius:999px;margin-top:8px;">Read the case study →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= CASE STUDY DETAIL (content in "caseStudies" in the logic below) ================= -->
+<sc-if value="{{ isCase }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Case Study Hero" style="background:#282828;padding:96px 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:28px;">
+      <a href="#cases" onClick="{{ goCases }}" style="font-size:16px;color:#fff;opacity:.8;align-self:flex-start;white-space:nowrap;" style-hover="color:#CEED5D;opacity:1">← All case studies</a>
+      <p style="font-size:18px;color:#CEED5D;text-transform:uppercase;letter-spacing:.06em;">{{ cs.descriptor }}</p>
+      <h1 style="font-size:clamp(40px,6vw,72px);font-weight:700;color:#fff;text-transform:uppercase;line-height:1;max-width:1100px;text-wrap:balance;">{{ cs.headline }}</h1>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px;margin-top:24px;">
+        <sc-for list="{{ cs.hero }}" as="st" hint-placeholder-count="3">
+          <div style="background:#CEED5D;border-radius:20px;padding:28px 32px;display:flex;flex-direction:column;gap:10px;color:#282828;">
+            <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+              <sc-if value="{{ st.hasBefore }}" hint-placeholder-val="{{ true }}"><span style="font-size:clamp(32px,3vw,40px);font-weight:500;opacity:.75;text-decoration:line-through;text-decoration-thickness:3px;">{{ st.before }}</span>
+              <span style="font-size:32px;font-weight:700;">→</span></sc-if>
+              <span style="font-size:56px;font-weight:700;line-height:1;letter-spacing:-.02em;">{{ st.after }}</span>
+            </div>
+            <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ st.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="" style="padding:96px 24px 0;">
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
+      <sc-for list="{{ cs.summary }}" as="para" hint-placeholder-count="1">
+        <p style="font-size:24px;line-height:1.45;color:#282828;text-wrap:pretty;">{{ para }}</p>
+      </sc-for>
+      <sc-if value="{{ cs.hasClient }}" hint-placeholder-val="{{ true }}"><h2 style="font-size:28px;font-weight:700;text-transform:uppercase;color:#282828;margin-top:24px;">The client</h2></sc-if>
+      <sc-for list="{{ cs.client }}" as="para" hint-placeholder-count="1">
+        <p style="font-size:20px;line-height:1.6;color:#282828;text-wrap:pretty;">{{ para }}</p>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding:96px 0 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;">
+      <sc-if value="{{ csMobile }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;gap:8px;background:#F5F5F5;padding:6px;border-radius:14px;margin-bottom:16px;">
+          <button onClick="{{ showBefore }}" style="flex:1;min-height:48px;border:none;border-radius:10px;font:inherit;font-size:18px;font-weight:700;text-transform:uppercase;cursor:pointer;background:{{ tabBeforeBg }};color:{{ tabBeforeFg }};">Before</button>
+          <button onClick="{{ showAfter }}" style="flex:1;min-height:48px;border:none;border-radius:10px;font:inherit;font-size:18px;font-weight:700;text-transform:uppercase;cursor:pointer;background:{{ tabAfterBg }};color:{{ tabAfterFg }};">After</button>
+        </div>
+      </sc-if>
+      <div style="display:grid;grid-template-columns:{{ ledgerCols }};gap:24px;align-items:stretch;">
+        <sc-if value="{{ showBeforeCol }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" style="background:#F5F5F5;border-radius:20px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:20px;">
+            <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#282828;">{{ cs.beforeLabel }}</span>
+            <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;text-transform:uppercase;line-height:1.05;color:#282828;">{{ cs.beforeTitle }}</h2>
+            <sc-for list="{{ cs.before }}" as="bk" hint-placeholder-count="3">
+              <sc-if value="{{ bk.b }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;gap:16px;align-items:flex-start;">
+                  <span style="width:12px;height:12px;background:#282828;flex-shrink:0;margin-top:9px;"></span>
+                  <p style="font-size:19px;line-height:1.5;color:#282828;">{{ bk.t }}</p>
+                </div>
+              </sc-if>
+              <sc-if value="{{ bk.p }}" hint-placeholder-val="{{ true }}">
+                <p style="font-size:19px;line-height:1.6;color:#282828;text-wrap:pretty;">{{ bk.t }}</p>
+              </sc-if>
+            </sc-for>
+          </div>
+        </sc-if>
+        <sc-if value="{{ showAfterCol }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal="" style="background:#E4ECFF;border-radius:20px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:20px;">
+            <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#282828;">After</span>
+            <h2 style="font-size:clamp(28px,3vw,40px);font-weight:700;text-transform:uppercase;line-height:1.05;color:#282828;">{{ cs.afterTitle }}</h2>
+            <p style="font-size:19px;line-height:1.6;color:#282828;">{{ cs.changedIntro }}</p>
+            <sc-for list="{{ cs.changes }}" as="ch" hint-placeholder-count="4">
+              <div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;align-items:start;">
+                <span style="font-size:56px;font-weight:700;color:#5D84ED;line-height:.9;">{{ ch.n }}</span>
+                <p style="font-size:19px;line-height:1.55;color:#282828;"><strong style="font-weight:700;">{{ ch.title }}</strong> {{ ch.body }}</p>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ cs.hasInsight }}" hint-placeholder-val="{{ false }}">
+    <section data-reveal="" style="padding:96px 0 0;">
+      <div style="max-width:1320px;margin:0 auto;padding:0 24px;">
+        <div style="background:#282828;border-radius:20px;padding:clamp(32px,5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,4vw,64px);align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#CEED5D;">The insight</span>
+            <h2 style="font-size:clamp(30px,3.4vw,46px);font-weight:700;text-transform:uppercase;line-height:1.02;color:#fff;text-wrap:balance;">{{ cs.insightTitle }}</h2>
+            <sc-for list="{{ cs.insight }}" as="para" hint-placeholder-count="2">
+              <p style="font-size:19px;line-height:1.6;color:#fff;text-wrap:pretty;">{{ para }}</p>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <sc-for list="{{ cs.compare }}" as="cmp" hint-placeholder-count="2">
+              <div style="background:#fff;border-radius:20px;padding:28px 32px;display:flex;flex-direction:column;gap:14px;color:#282828;">
+                <span style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ cmp.role }}</span>
+                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;">
+                  <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;text-transform:uppercase;letter-spacing:.06em;">Vancouver keeps</span><span style="font-size:clamp(28px,3vw,40px);font-weight:500;opacity:.7;">{{ cmp.city }}</span></div>
+                  <div style="display:flex;flex-direction:column;gap:4px;"><span style="font-size:14px;text-transform:uppercase;letter-spacing:.06em;">The North keeps</span><span style="font-size:clamp(28px,3vw,40px);font-weight:700;">{{ cmp.north }}</span></div>
+                </div>
+                <span style="align-self:flex-start;background:#CEED5D;font-size:clamp(28px,3vw,40px);font-weight:700;padding:6px 16px;border-radius:12px;line-height:1.1;">{{ cmp.gap }} <span style="font-size:16px;font-weight:500;">more over 5 years</span></span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section data-screen-label="Creative Wall" style="padding:96px 0 0;background:#fff;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;">
+      <h2 data-reveal="" style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;color:#282828;margin-bottom:40px;">{{ cs.wallTitle }}</h2>
+      <sc-if value="{{ isCsCjhs }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal=""><img src="assets/img/case-studies/cjhs/home.png" alt="cjhs.ca homepage" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">The homepage: a clear mission statement up front and the Donate button always in reach.</p>
+        <div data-reveal="" style="margin-top:64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(28px,4vw,64px);align-items:center;">
+          <video src="assets/img/case-studies/cjhs/scroll.mp4" autoplay="" muted="" loop="" playsinline="" style="width:100%;max-width:360px;justify-self:center;display:block;border-radius:28px;box-shadow:0 12px 32px rgba(40,40,40,.18);background:#282828;"></video>
+          <div style="display:flex;flex-direction:column;gap:16px;max-width:520px;">
+            <h3 style="font-size:clamp(26px,2.6vw,34px);font-weight:700;text-transform:uppercase;line-height:1.05;color:#282828;">Built for the phone first</h3>
+            <p style="font-size:19px;line-height:1.6;color:#282828;">A scroll through the live site on mobile.</p>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isCsPainting }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;gap:24px;overflow-x:auto;padding:8px 4px 32px;scroll-snap-type:x mandatory;">
+          <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;"><img src="assets/img/case-studies/painting/carousel-1.png" alt="Carousel slide 1" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;"><img src="assets/img/case-studies/painting/carousel-2.png" alt="Carousel slide 2" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;"><img src="assets/img/case-studies/painting/carousel-3.png" alt="Carousel slide 3" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;"><img src="assets/img/case-studies/painting/carousel-4.png" alt="Carousel slide 4" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div style="flex:0 0 min(360px,78vw);scroll-snap-align:start;"><img src="assets/img/case-studies/painting/carousel-5.png" alt="Carousel slide 5" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        </div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">Carousel: the five “Goodbye, beige” slides, in order. Swipe through the before, the after and the details.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;margin-top:64px;">
+          <div data-reveal=""><img src="assets/img/case-studies/painting/ad-1.png" alt="Single-image ad 1" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal=""><img src="assets/img/case-studies/painting/ad-2.png" alt="Single-image ad 2" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal=""><img src="assets/img/case-studies/painting/ad-3.png" alt="Single-image ad 3" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal=""><img src="assets/img/case-studies/painting/ad-4.png" alt="Single-image ad 4" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        </div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">Single image: the four approved 1x1 ads across cabinets, exterior and interior ad sets.</p>
+      </sc-if>
+      <sc-if value="{{ isCsBys }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;">
+          <div data-reveal=""><img src="assets/img/case-studies/bys/retail-1x1.png" alt="Retail Store Manager comparison ad" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal=""><img src="assets/img/case-studies/bys/food-1x1.png" alt="Food Service Manager comparison ad" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        </div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">One card per role: the Vancouver take-home, the northern take-home and the five-year gap.</p>
+        <div style="display:grid;grid-template-columns:4fr 2.6fr 7fr;gap:24px;align-items:end;margin-top:64px;overflow-x:auto;min-width:0;">
+          <div data-reveal="" style="min-width:200px;"><img src="assets/img/case-studies/bys/retail-4x5.png" alt="Feed 4:5 version" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal="" style="min-width:140px;"><img src="assets/img/case-studies/bys/retail-9x16.png" alt="Stories 9:16 version" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal="" style="min-width:300px;"><img src="assets/img/case-studies/bys/retail-link.png" alt="Link ad 1.91:1 version" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        </div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">The same card resized for feed, stories and link placements.</p>
+      </sc-if>
+      <sc-if value="{{ isCsReno }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px;">
+          <div data-reveal="" style="position:relative;"><img src="assets/img/case-studies/reno/a.png" alt="Creative A: The pink tub is gone" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"><span style="position:absolute;top:16px;left:16px;background:#282828;color:#CEED5D;font-size:22px;font-weight:700;padding:6px 16px;border-radius:10px;">A</span></div>
+          <div data-reveal="" style="position:relative;"><img src="assets/img/case-studies/reno/b.png" alt="Creative B: Same bathroom" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"><span style="position:absolute;top:16px;left:16px;background:#282828;color:#CEED5D;font-size:22px;font-weight:700;padding:6px 16px;border-radius:10px;">B</span></div>
+          <div data-reveal="" style="position:relative;"><img src="assets/img/case-studies/reno/c.png" alt="Variant: The pink tub is gone" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+          <div data-reveal="" style="position:relative;"><img src="assets/img/case-studies/reno/d.png" alt="Variant: Same bathroom" style="width:100%;display:block;border-radius:20px;box-shadow:0 12px 32px rgba(40,40,40,.18);"></div>
+        </div>
+        <p style="font-size:18px;color:#282828;line-height:1.4;margin-top:20px;max-width:720px;">A vs B test: two headlines over the same before-and-after, followed by their variants. The two cheapest-lead winners got the budget.</p>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-screen-label="Results" style="padding:96px 0 0;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 24px;">
+      <h2 data-reveal="" style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;color:#282828;">{{ cs.resultsTitle }}</h2>
+      <p style="font-size:18px;color:#282828;line-height:1.5;margin:12px 0 32px;max-width:820px;">{{ cs.resultsNote }}</p>
+      <div data-reveal="" style="overflow-x:auto;border-radius:20px;background:#F5F5F5;">
+        <table style="width:100%;min-width:{{ cs.tableMin }};border-collapse:collapse;font-size:18px;color:#282828;">
+          <thead>
+            <tr style="background:#282828;color:#fff;">
+              <th style="text-align:left;padding:20px 24px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ cs.cols.c0 }}</th>
+              <sc-if value="{{ cs.fourCol }}" hint-placeholder-val="{{ true }}"><th style="text-align:right;padding:20px 24px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ cs.cols.c1 }}</th></sc-if>
+              <th style="text-align:right;padding:20px 24px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ cs.cols.c2 }}</th>
+              <sc-if value="{{ cs.fourCol }}" hint-placeholder-val="{{ true }}"><th style="text-align:right;padding:20px 24px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;">{{ cs.cols.c3 }}</th></sc-if>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ cs.rows }}" as="r" hint-placeholder-count="8">
+              <tr style="background:{{ r.bg }};">
+                <td style="padding:18px 24px;font-weight:500;">{{ r.m }}</td>
+                <sc-if value="{{ cs.fourCol }}" hint-placeholder-val="{{ true }}"><td style="padding:18px 24px;text-align:right;font-size:24px;font-weight:500;opacity:.7;">{{ r.a }}</td></sc-if>
+                <td style="padding:18px 24px;text-align:right;font-size:28px;font-weight:700;">{{ r.b }}</td>
+                <sc-if value="{{ cs.fourCol }}" hint-placeholder-val="{{ true }}"><td style="padding:12px 24px;text-align:right;"><span style="display:inline-block;font-size:20px;font-weight:700;padding:6px 14px;border-radius:10px;white-space:nowrap;background:{{ r.chBg }};">{{ r.c }}</span></td></sc-if>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+      <sc-if value="{{ cs.showBordered }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal="" style="margin-top:24px;border:4px solid #282828;border-radius:20px;padding:32px 36px;max-width:960px;display:flex;flex-direction:column;gap:16px;">
+          <sc-for list="{{ cs.calloutParas }}" as="para" hint-placeholder-count="1"><p style="font-size:20px;line-height:1.6;color:#282828;text-wrap:pretty;">{{ para }}</p></sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ cs.calloutPlain }}" hint-placeholder-val="{{ false }}">
+        <div data-reveal="" style="margin-top:24px;background:#282828;border-radius:20px;padding:32px 36px;max-width:960px;">
+          <sc-for list="{{ cs.calloutParas }}" as="para" hint-placeholder-count="1"><p style="font-size:24px;line-height:1.45;color:#fff;font-weight:500;">{{ para }}</p></sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-reveal="" style="padding:96px 24px 0;">
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:24px;">
+      <h2 style="font-size:clamp(36px,4.5vw,56px);font-weight:700;text-transform:uppercase;color:#282828;">Why it worked</h2>
+      <sc-for list="{{ cs.why }}" as="para" hint-placeholder-count="2">
+        <p style="font-size:20px;line-height:1.65;color:#282828;text-wrap:pretty;">{{ para }}</p>
+      </sc-for>
+      <sc-if value="{{ cs.hasChips }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;">
+          <sc-for list="{{ cs.chips }}" as="chip" hint-placeholder-count="6">
+            <span style="background:#E4ECFF;color:#282828;font-size:18px;font-weight:500;padding:8px 18px;border-radius:999px;">{{ chip }}</span>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <section data-reveal="" style="padding:96px 24px;">
+    <div style="max-width:1320px;margin:0 auto;background:#282828;border-radius:20px;padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;gap:24px;align-items:flex-start;">
+      <h2 style="font-size:clamp(32px,4vw,52px);font-weight:700;text-transform:uppercase;color:#fff;line-height:1.05;max-width:960px;text-wrap:balance;">{{ cs.ctaTitle }}</h2>
+      <p style="font-size:20px;line-height:1.5;color:#fff;max-width:760px;">{{ cs.ctaBody }}</p>
+      <a href="#contact" style="background:#CEED5D;color:#282828;font-size:24px;font-weight:500;padding:10px 24px;border-radius:999px;transition:all .3s ease;" style-hover="transform:translateY(-2px);opacity:.85;color:#282828">Book a call</a>
+    </div>
+  </section>
+</sc-if>
+
+<!-- ================= CONTACT ================= -->
+<sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Contact" style="padding:80px 0 100px;">
+    <div style="max-width:1320px;margin:0 auto;padding:0 12px;display:flex;flex-direction:column;gap:16px;">
+      <h1 style="font-size:clamp(35px,5vw,64px);font-weight:500;color:#000;text-transform:uppercase;line-height:1.1;max-width:900px;text-wrap:balance;">Tell us what you want to grow.</h1>
+      <p style="font-size:clamp(20px,2.2vw,26px);font-weight:300;color:#282828;line-height:1.3;max-width:760px;">Fill this in and you will hear back from a person, not an autoresponder.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;margin-top:40px;align-items:start;">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ sendForm }}" style="background:#F0F0F0;border-radius:20px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:20px;">
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;">Name<input name="name" required="" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;">Business name<input name="business" required="" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;">Email<input name="email" type="email" required="" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;">Phone<input name="phone" type="tel" required="" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;grid-column:1/-1;">What do you need?<select name="need" required="" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;"><option value="">Choose one</option><option>Leads from Meta or Google Ads</option><option>Video and content</option><option>Social media</option><option>A website</option><option>Recruitment</option><option>Not sure yet</option></select></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:16px;font-weight:500;color:#282828;grid-column:1/-1;">Anything else we should know? <span style="font-weight:300;">(optional)</span><textarea name="notes" rows="5" style="width:100%;font:inherit;font-size:18px;color:#282828;background:#fff;border:1px solid #cfcfcf;border-radius:10px;padding:12px 14px;resize:vertical;"></textarea></label>
+            <div style="grid-column:1/-1;display:flex;"><button type="submit" style="background:#5D84ED;color:#fff;font:inherit;font-size:22px;font-weight:400;padding:10px 32px;border:0;border-radius:999px;cursor:pointer;transition:all .3s ease;" style-hover="transform:translateY(-2px);opacity:.85">Send it</button></div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="background:#F0F0F0;border-radius:20px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;gap:12px;">
+            <h2 style="font-size:30px;font-weight:500;color:#282828;text-transform:uppercase;">Thanks, it’s on its way.</h2>
+            <p style="font-size:19px;font-weight:300;color:#282828;line-height:1.5;">Your email app should have opened with your details filled in. Press send there and we will get back to you.</p>
+          </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:28px;padding-top:8px;">
+          <div style="display:flex;flex-direction:column;gap:6px;"><p style="font-size:15px;font-weight:500;color:#5D84ED;text-transform:uppercase;letter-spacing:.06em;">Email</p><a href="mailto:contact@backpackdigitalmedia.com" style="font-size:22px;color:#282828;word-break:break-word;" style-hover="color:#5D84ED">contact@backpackdigitalmedia.com</a></div>
+          <div style="display:flex;flex-direction:column;gap:6px;"><p style="font-size:15px;font-weight:500;color:#5D84ED;text-transform:uppercase;letter-spacing:.06em;">Office</p><p style="font-size:22px;font-weight:300;color:#282828;line-height:1.4;">Unit 209 - 5729 West Boulevard<br>Vancouver, BC</p></div>
+          <div style="display:flex;flex-direction:column;gap:6px;"><p style="font-size:15px;font-weight:500;color:#5D84ED;text-transform:uppercase;letter-spacing:.06em;">Hours</p><p style="font-size:22px;font-weight:300;color:#282828;line-height:1.4;">Monday to Friday<br>8:30am to 5:30pm</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+</main>
+
+<footer style="background:#5D84ED;padding:100px 0 30px;margin-top:{{ footerGap }};">
+  <div style="max-width:1320px;margin:0 auto;padding:0 12px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap;">
+      <div style="max-width:400px;">
+        <img src="assets/img/logo-white.svg" alt="Backpack Digital Media" style="width:250px;display:block;">
+        <p style="margin-top:20px;font-size:10px;font-weight:300;color:#fff;line-height:1.5;">Backpack Digital Media is a team of marketing experts who make it simple for businesses to get real results. From digital campaigns to finding the right talent, we specialize in solutions that drive real growth</p>
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:300;color:#fff;line-height:1.4;">
+          <p>Unit 209 - 5729 West Boulevard, Vancouver, BC</p>
+          <a href="mailto:contact@backpackdigitalmedia.com" style="color:#fff;" style-hover="color:#CEED5D">contact@backpackdigitalmedia.com</a>
+          <p>Monday to Friday, 8:30am to 5:30pm</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:48px;">
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <a href="#home" onClick="{{ goHome }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">Home</a>
+          <a href="#about" onClick="{{ goAbout }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">About Us</a>
+          <a href="#marketing" onClick="{{ goMarketing }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">Digital Marketing</a>
+          <a href="#recruitment" onClick="{{ goRecruitment }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">Recruitment Marketing</a>
+          <a href="#cases" onClick="{{ goCases }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">Case Studies</a>
+          <a href="#contact" onClick="{{ goContact }}" style="color:#fff;font-size:15px;" style-hover="color:#CEED5D">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;padding-top:30px;margin-top:24px;border-top:1px solid #dee2e6;">
+      <p style="font-size:14px;color:#fff;">© Copyright 2026, All Rights Reserved</p>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { page: 'home', scrolled: false, hoverSvc: 0 };
+  // ✏️ Service sub-page content — edit text here
+  subPages = {
+    social: { title: 'Grow Your Brand on Social Media.', subtitle: 'Strategy. Content. Results.', button: 'Let’s Grow Your Social Media', image: 'assets/img/marketing_sub_pages/1.svg', what: 'We help businesses build meaningful connections on social media platforms with engaging content, consistent strategy, and measurable results.', highlights: ['Social Media Strategy', 'Content Creation & Scheduling', 'Social Advertising Campaigns', 'Community Management'] },
+    branding: { title: 'Stand Out with a Strong Brand.', subtitle: 'Strategy. Content. Results.', button: 'Let’s Build Your Brand', image: 'assets/img/marketing_sub_pages/2.svg', what: 'We design brands that capture who you are and connect with your audience.', highlights: ['Logo Design', 'Brand Identity Development', 'Visual Guidelines', 'Messaging & Tone of Voice'] },
+    seo: { title: 'Get Found on Google and Beyond.', subtitle: 'Improve your search rankings and drive organic growth.', button: 'Boost My SEO', image: 'assets/img/marketing_sub_pages/3.svg', what: 'Our SEO strategies help you rank higher, reach the right audience, and grow traffic.', highlights: ['Keyword Research & Strategy', 'On-Page Optimization', 'Technical SEO Fixes', 'Content Strategy for SEO'] },
+    sem: { title: 'Results-Driven Search Engine Marketing.', subtitle: 'Paid search campaigns that deliver ROI.', button: 'Start My SEM Campaign', image: 'assets/img/marketing_sub_pages/4.svg', what: 'We run targeted ads on search engines to help you drive traffic and leads.', highlights: ['Google Ads Management', 'Campaign Strategy & Setup', 'Budget Optimization', 'Performance Tracking'] },
+    email: { title: 'Turn Emails into Results.', subtitle: 'Strategic campaigns that engage, convert, and retain customers.', button: 'Let’s Launch Your Email Campaign', image: 'assets/img/marketing_sub_pages/5.svg', what: 'From newsletters to automated campaigns, we create emails that your audience wants to open.', highlights: ['Email Strategy & Campaigns', 'List Building & Segmentation', 'Automated Email Workflows', 'Performance Analytics'] },
+    web: { title: 'Build a Website That Works for You', subtitle: 'Beautiful, functional websites that convert visitors into customers.', button: 'Let’s Build Your Website', image: 'assets/img/marketing_sub_pages/6.svg', what: 'We design and develop websites that are fast, responsive, and built for success.', highlights: ['Custom Website Design', 'Mobile Optimization', 'E-Commerce Solutions', 'UX/UI Focused Development'] },
+  };
+  // ✏️ Case study content — copy is final per brief
+  caseStudies = {
+    'cs-painting': {
+      descriptor: 'California painting contractor · Meta Ads',
+      headline: '$15,000+ in booked painting jobs from under $1,000 in Meta ad spend',
+      hero: [
+        { before: '2', after: '17', label: 'Leads' },
+        { before: '$173', after: '$58', label: 'Cost per lead' },
+        { before: '$0', after: '$15K+', label: 'Client revenue' },
+      ],
+      summary: ['A California residential painting contractor went from 2 leads at $173 each to 17 leads at $58 each after Backpack Digital Media rebuilt their Meta Ads campaign. Over two months, on a budget of roughly $500 per month, the new campaign produced more than $15,000 in client revenue. Cost per lead dropped 67 percent and lead volume rose 8.5x, with the same daily budget as before.'],
+      client: ['A locally owned residential painting contractor in California offering interior and exterior painting for homeowners. Average job value sits in the low thousands, so a single booked project pays for months of advertising. They had been running Meta Ads through a previous agency with a daily budget of $16.50 and were getting almost nothing back.'],
+      beforeTitle: '$173 per lead and two enquiries',
+      before: [
+        { p: 1, t: 'The previous campaign spent $346, produced 2 leads and booked zero jobs. The ads got clicks (85 link clicks at $4.07 each) but those clicks went nowhere: only 1 in 43 people who clicked became a lead.' },
+        { p: 1, t: 'What was holding it back:' },
+        { b: 1, t: 'Generic creative that looked like every other contractor ad in the feed' },
+        { b: 1, t: 'No clear offer. A homeowner had to read the whole ad to work out why they should care' },
+        { b: 1, t: 'Nothing to prove the company could do the work: no past projects, no results, no social proof' },
+        { b: 1, t: 'A lead form that either asked too little (unqualified leads) or asked nothing useful' },
+        { p: 1, t: 'The one thing already in good shape was their social presence: active Facebook and Instagram pages with real project photos. The previous campaign simply did not take advantage of it.' },
+      ],
+      changedIntro: 'Same platform, same daily budget, same service area. Four things were rebuilt, and one existing strength was finally put to work.',
+      changes: [
+        { title: 'Conversion-optimized creative.', body: 'Eye-catching before-and-after visuals built to stop the scroll, not stock photos of paint rollers. Every ad was designed with one job: earn the click from a homeowner who is already thinking about painting.' },
+        { title: 'A compelling offer, clear in the first 5 seconds.', body: 'That is all the attention a feed gives you. The offer and who it is for sit in the first line and the first frame, so a homeowner knows instantly whether this is for them.' },
+        { title: 'Trust built into the ad.', body: 'Real past projects, real results and real customer feedback shown up front. A homeowner should feel they are hiring a proven crew before they ever fill in a form.' },
+        { title: 'A quality funnel with instant forms.', body: 'Meta instant forms cut friction, so more people finish them. The right qualifying questions (property type, scope of work, timing) filter out tire-kickers, so the leads that come through are ones the client wants to call back.' },
+        { title: 'High-quality socials.', body: 'Homeowners check the Facebook and Instagram page before they reply, and this client already had strong ones: recent project photos, consistent branding and proof of an active business. The new ads were built to send people there and let that proof close the sale. Without it, the other four changes would have converted at a fraction of the rate.' },
+      ],
+      resultsTitle: 'Results: before vs after',
+      resultsNote: 'Meta Ads Manager, August 1 to October 19, 2026. Both campaigns ran at a $16.50 daily budget.',
+      cols: { c0: 'Metric', c1: 'Previous agency', c2: 'Backpack campaign', c3: 'Change' },
+      rows: [
+        ['Ad spend (USD)', '$346', '$981', ''], ['Leads', '2', '17', '8.5x', 1], ['Cost per lead', '$172.89', '$57.72', '67% lower', 1],
+        ['Impressions', '7,216', '26,173', '3.6x', 1], ['Reach (people)', '3,303', '7,099', '2.1x', 1], ['CPM (cost per 1,000 impressions)', '$47.92', '$37.49', '22% lower', 1],
+        ['Link clicks', '85', '308', '3.6x', 1], ['Cost per link click', '$4.07', '$3.19', '22% lower', 1], ['Clicks that became leads', '2.4%', '5.5%', '2.3x', 1],
+        ['Client revenue attributed', '$0', '$15,000+', ''],
+      ],
+      callout: 'On $981 of spend, $15,000 in revenue is a return of roughly 15 to 1 before the cost of paint and labour.', calloutBordered: false,
+      why: [
+        'The budget did not change. What changed is how much of each dollar turned into a qualified conversation. Cheaper delivery (lower CPM) bought 3.6x the impressions and clicks, and a better offer plus a smarter form more than doubled the share of clicks that became leads. Those two gains compound: 3.6x the clicks at 2.3x the conversion rate is how 2 leads becomes 17.',
+        'For a local painting contractor, this is the whole game. At $500 a month, one booked job covers the ad spend and the rest is margin. The leads were qualified at the form, so the owner spent time quoting real projects instead of chasing people who were never going to buy.',
+      ],
+      chips: [],
+      ctaTitle: 'If your Meta Ads are producing clicks but not customers, this is usually why.',
+      ctaBody: 'Backpack Digital Media runs this system for home service businesses across North America.',
+    },
+    'cs-reno': {
+      descriptor: 'Montana renovation contractor · Meta Ads',
+      headline: 'Same monthly budget, six times the leads',
+      hero: [
+        { before: '4', after: '~23', label: 'Leads per month' },
+        { before: '$343', after: '$56', label: 'Cost per lead' },
+        { before: '0.5%', after: '7.9%', label: 'Click to lead' },
+      ],
+      summary: [
+        'A Montana renovation contractor was spending about $1,370 a month on Meta ads and getting four consultation requests. Backpack rebuilt the campaign and, on roughly the same monthly spend, it now produces about 23 consultation requests a month at $56 each. Cost per lead fell 84%, from $342.65 to $55.81.',
+        'Nothing about the budget changed. What changed was the creative, where the click went, and what the campaign was told to optimize for.',
+      ],
+      client: [
+        'A residential renovation contractor in a mid-sized Montana city, selling fixed-price bathroom and kitchen remodels. Jobs are high value and the sales cycle runs through a design consultation, so the only number that matters at the top of the funnel is how many consultation requests the ads produce, and what each one costs.',
+        'The account came to Backpack through a partner agency, so the client is not named here.',
+      ],
+      beforeTitle: 'One static ad, a landing page, four leads',
+      before: [
+        { p: 1, t: 'The previous campaign ran through July 2026 on $50 a day. It used static image ads, sent every click to a landing page, and tracked a custom conversion on that page as the result.' },
+        { p: 1, t: 'The traffic side looked healthy: 56,914 impressions, 835 link clicks, a 1.47% click-through rate and a $1.64 cost per click. The problem was everything after the click. 599 people reached the landing page and four filled in the form, a 0.7% conversion rate. At $1,370.60 spent, that is $342.65 per lead.' },
+        { p: 1, t: 'Four conversions in a month also meant Meta never had enough signal to learn who converts. The campaign was paying for cheap clicks it could not turn into anything.' },
+      ],
+      changedIntro: 'Backpack relaunched the campaign in August 2026 on the same $50 a day. Four changes, in order of impact.',
+      changes: [
+        { title: 'Replaced the landing page with a Meta instant form.', body: 'Instead of leaving Facebook or Instagram, loading a page and finding the form, the prospect taps the ad and a pre-filled form opens in the app. Fewer steps, fewer drop-offs. The form carries a few qualifying questions (project type, timeline, budget range) so the consultations that come through are real.' },
+        { title: 'Changed what the campaign optimizes for.', body: 'The old campaign optimized for a custom website event that fired four times a month. The new one optimizes for lead-form submissions, which gives Meta a steady stream of conversions to learn from. More signal, better targeting, lower cost per result.' },
+        { title: 'Replaced static images with scroll-stopping creative and carousels.', body: 'Before-and-after project photos in carousel format, so the prospect swipes through finished work instead of glancing past one image. The headline does the selling in the first second ("The pink tub is gone." over a before-and-after of the same bathroom) and the offer, a design consultation on a fixed-price remodel, sits right under it.' },
+        { title: 'A/B tested four creatives and scaled the winners.', body: 'Four concepts ran head to head. The two that produced the cheapest leads got the budget; the other two were paused.' },
+      ],
+      resultsTitle: 'Results',
+      resultsNote: 'Figures from Meta Ads Manager, 1 July to 19 October 2026, in USD. The before campaign ran for one month; the after campaign has run for about two and a half months, so the table shows totals and the monthly rate side by side.',
+      cols: { c0: '', c1: 'Before (July 2026)', c2: 'After (Aug to Oct 19, 2026)', c3: 'Change' },
+      rows: [
+        ['Amount spent', '$1,370.60', '$3,404.54', ''], ['Spend per month', '~$1,370', '~$1,310', 'about the same'], ['Leads', '4', '61', '15x total', 1],
+        ['Leads per month', '4', '~23', '6x', 1], ['Cost per lead', '$342.65', '$55.81', 'down 84%', 1], ['Impressions', '56,914', '52,308', ''],
+        ['Link clicks', '835', '772', ''], ['Click-through rate', '1.47%', '1.48%', 'flat'], ['Click to lead', '0.5%', '7.9%', '16x', 1],
+        ['Cost per click', '$1.64', '$4.41', 'up'], ['CPM', '$24.08', '$65.09', 'up'],
+      ],
+      callout: 'The last two rows are the honest part. The new campaign pays more per click and more per thousand impressions, because Meta is now bidding for people likely to submit a form rather than anyone likely to click. It is the right trade: the campaign gets fewer, more expensive clicks and turns one in thirteen into a lead instead of one in two hundred.', calloutBordered: true,
+      why: [
+        'The old campaign was built to win clicks. The new one is built to win consultations. Every change points the same way: remove the steps between the ad and the form, give the algorithm a conversion it can actually see, and show finished work instead of a stock image.',
+        'For a renovation contractor, the lead form is the whole game. A homeowner scrolling at 9pm will tap a pre-filled form to book a design consultation; they will not load a website and hunt for a contact page. Add two qualifying questions and the consultations that arrive are worth the drive.',
+        'The same rebuild applies to any trade or home-services business with a consultation or quote at the front of the sales process:',
+      ],
+      chips: ['Painters', 'Electricians', 'Roofers', 'Landscapers', 'Flooring', 'HVAC'],
+      ctaTitle: 'Ready to see what your ad account is leaving on the table?',
+      ctaBody: 'Backpack will review your current campaigns and show you where the leads are.',
+    },
+  };
+  cjhs = {
+    descriptor: 'Calgary John Howard Society · Website rebuild',
+    headline: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
+    wallTitle: 'The site we built.',
+    hero: [
+      { after: '15 days', label: 'Kickoff to first design' },
+      { after: '12 weeks', label: 'Full review site, every page migrated' },
+      { after: '6 weeks', label: 'Until they hired us again' },
+    ],
+    summary: ['The Calgary John Howard Society (cjhs.ca) needed a site that worked for donors, for families and agencies looking for a specific program, and for Calgarians trying to understand what the organization does. Backpack Digital Media restructured the site around those audiences, designed it, built it and migrated every page. Six weeks after handoff, CJHS hired us again to build their annual report.'],
+    client: ['The Calgary John Howard Society is a 75-year-old nonprofit that helps reduce crime and keep Calgary communities safe, working with youth and adults involved in the justice system through housing, employment, mentorship, reintegration and restorative justice. More than a dozen programs, and a website that is the front door for every one of them.'],
+    beforeLabel: 'The starting point', beforeTitle: 'Organized by the org chart',
+    before: [
+      { p: 1, t: 'The old site had grown the way most nonprofit sites do: a page per program, added one at a time, organized by internal program names rather than by who was looking. Content had gone stale and the navigation had filled up with sections nobody used.' },
+      { p: 1, t: 'CJHS knew exactly who the site needed to serve:' },
+      { b: 1, t: 'Donors and funders who need a clear Donate button, fast' },
+      { b: 1, t: 'Referring agencies and families who need to find the right program without knowing what CJHS calls it' },
+      { b: 1, t: 'Engaged Calgarians who want to understand the why and the how, and who may become donors' },
+      { p: 1, t: 'What they needed was a partner who could turn that into a structure, a design and a finished site without pulling a small team away from their actual work.' },
+    ],
+    afterTitle: 'What Backpack did',
+    changedIntro: '',
+    changes: [
+      { title: 'Restructured the site around the visitor, not the org chart.', body: 'Programs are now grouped by who they serve: Culturally Diverse, Adult, Youth and Initiatives. A referring agency or a family member finds the right program in two clicks. Dead sections were removed and the hiring, volunteering and membership pages were consolidated into one clear hub.' },
+      { title: 'Designed it with the client in the room.', body: 'A real homepage design, not a wireframe, was presented to the Executive Director and the web committee 15 business days after kickoff, then refined in a shared Figma file where the team left comments directly.' },
+      { title: 'Built and migrated everything.', body: 'WordPress, optimized for mobile and speed, with a prominent Donate call to action, an impact stats counter and a stories feed on the homepage. We moved every page of content ourselves rather than handing over a frame and a to-do list.' },
+      { title: 'Handed it off so they could run it.', body: 'Staff were in the staging site editing their own text and images before launch, and their operations lead was walked through hosting and editing so there were no surprises after.' },
+    ],
+    resultsTitle: 'Results',
+    resultsNote: '',
+    cols: { c0: 'Milestone', c1: '', c2: 'Result', c3: '' }, fourCol: false,
+    rows: [
+      ['First design presented', '', '15 business days after kickoff', ''],
+      ['Full review site, every page migrated', '', '12 weeks', ''],
+      ['Repeat business: annual report microsite', '', 'Within 6 weeks of handoff', ''],
+      ['Still live, staff publishing their own stories', '', '2 years later', ''],
+    ],
+    callout: [], calloutBordered: true,
+    why: ['The client did the hard thinking about who the site was for. We built the structure around it and took everything else off their plate. A nonprofit team has a mission to run; reviewing and approving was all they had to do.'],
+    chips: [],
+    ctaTitle: 'Is your site organized around how you are structured, instead of how people look for you?',
+    ctaBody: 'That is the first thing we fix. Backpack designs and builds websites for organizations that need a site that serves several audiences at once.',
+  };
+  bys = {
+    descriptor: 'BankYourSalary · Recruitment platform for northern relocation roles',
+    headline: '43 relocation-ready candidates in 11 weeks, at $115 each',
+    hero: [
+      { after: '43', label: 'Completed registrations' },
+      { after: '$115', label: 'Cost per registration' },
+      { after: '~$1,900', label: 'Ad spend per month' },
+    ],
+    summary: [
+      'A national retailer with stores across Canada\u2019s North could get applications for its remote-community roles. Finding people willing to move was the hard part: recruiters had to work through a lot of applicants to find the few who would relocate. Backpack built BankYourSalary.com from scratch: a recruitment platform that leads with the financial case for relocating, so candidates arrive already sold on the move. In its first eleven weeks of paid social, the platform delivered 43 completed candidate registrations at $115.24 each, on about $1,900 a month in ad spend, with every registration handed to the client\u2019s recruiters the same day.',
+      'Backpack designed the platform, built it, runs the advertising and operates it as an ongoing service.',
+    ],
+    client: [],
+    beforeLabel: 'The problem', beforeTitle: 'The client and the problem',
+    before: [
+      { p: 1, t: 'The client operates retail and food service stores in remote communities across Northern Canada. The roles pay well and come with housing and food covered, but they require moving to a community most candidates have never heard of.' },
+      { p: 1, t: 'Conventional recruiting got applications. Job boards produce volume, and the client had plenty of it. The breakdown came after the apply: once a recruiter raised relocation, most candidates went quiet. Every conversation started with the hardest objection, and recruiters spent most of their time on applicants who would never move.' },
+      { p: 1, t: 'Backpack had run the client\u2019s job-board advertising since 2022 and could see the pattern in the data. The problem was not reach. It was the order in which candidates learned about the job.' },
+    ],
+    afterTitle: 'What Backpack built',
+    changedIntro: 'BankYourSalary.com is a complete recruitment product, designed, built and operated by Backpack. The client did not supply a brief for a website; it supplied a hiring problem.',
+    changes: [
+      { title: 'The platform.', body: 'A purpose-built site at bankyoursalary.com where candidates discover northern roles through the financial case for taking them. Built from scratch rather than on a job-board template, so the whole experience is organized around the relocation decision.' },
+      { title: 'The calculator.', body: 'The centrepiece. A candidate enters their role and city and sees what they keep each month now, what they would keep in a northern community with housing and food covered, and the five-year difference. The numbers in every ad come straight from it, so what the ad promises is what the calculator shows.' },
+      { title: 'The funnel.', body: 'Calculator first, registration second. A candidate only registers after seeing their own numbers, which is why the registrations are relocation-ready rather than curious.' },
+      { title: 'The ads.', body: 'Meta campaigns targeted by city and role, each one a single comparison card: the role, the Vancouver take-home, the northern take-home, the five-year gap in large type, and "Free calculator. See your numbers." No stock photos of the North, no lifestyle copy. Just the arithmetic.' },
+      { title: 'The operation.', body: 'Backpack runs the campaigns, maintains the platform and sends every completed registration to the client\u2019s recruiters the same day, on a per-placement fee model. The client buys hires, not impressions.' },
+    ],
+    insightTitle: 'Make relocation the reason to apply',
+    insight: [
+      'Instead of hiding the move until after the application, lead with it, and lead with the money.',
+      'Nobody had put those two numbers side by side for candidates. Once you do, relocation stops being the objection and becomes the offer. The candidate who comes through this door has already decided to move; the recruiter\u2019s job is to confirm the fit, not to sell the geography.',
+    ],
+    compare: [
+      { role: 'Retail store manager', city: '$443/mo', north: '$4,286/mo', gap: '$231,000' },
+      { role: 'Food service manager', city: '$42/mo', north: '$3,414/mo', gap: '$207,000' },
+    ],
+    resultsTitle: 'Results',
+    resultsNote: 'Meta Ads Manager, 1 August to 19 October 2026, in CAD. A registration is a completed candidate profile on the platform, tracked by the Meta pixel.',
+    cols: { c0: 'Metric', c1: '', c2: 'Aug 1 to Oct 19, 2026', c3: '' }, fourCol: false,
+    rows: [
+      ['Ad spend', '', '$4,955.52 (about $1,900 a month)', ''], ['Completed registrations', '', '43', ''], ['Cost per registration', '', '$115.24', ''],
+      ['Registrations per week', '', 'about 4', ''], ['People reached', '', '37,814', ''], ['Impressions', '', '122,386', ''],
+      ['Link clicks', '', '1,948', ''], ['Click-through rate', '', '1.59%', ''], ['Cost per click', '', '$2.54', ''],
+    ],
+    callout: [
+      'For context, a recruitment agency fee on a relocation hire typically runs 15 to 25 percent of first-year salary, several thousand dollars per hire before anyone has moved. Here the client pays about $115 to put a candidate in front of its recruiters who has already seen the numbers and chosen to apply, and a placement fee only when someone is hired.',
+      'The campaign has never reached the volume where Meta\u2019s learning phase fully settles, and performance has still improved month over month as the audience data accumulates. Expansion from Toronto to Vancouver, Calgary and Edmonton began in October 2026.',
+    ], calloutBordered: true,
+    why: [
+      'The client\u2019s problem was never a shortage of applicants. It was that every applicant learned the hard part last. BankYourSalary reverses the order: the move and the money come first, the application comes second, and only the people for whom the arithmetic works ever reach a recruiter.',
+      'It also changes what the client is paying for. Job boards charge for applications, most of which go nowhere. BankYourSalary charges for placements, so Backpack\u2019s incentive and the client\u2019s are the same: hires, not traffic.',
+      'The same model fits any employer whose roles come with a relocation, a remote posting or a compensation structure that looks ordinary on a job board and exceptional once you do the math:',
+    ],
+    chips: ['Northern and remote operations', 'Mining and resources', 'Long-term care', 'Overseas postings'],
+    ctaTitle: 'Hiring for roles people have to move for?',
+    ctaBody: 'Backpack will show you what your candidates would keep.',
+  };
+  pages = ['home', 'about', 'marketing', 'recruitment', 'cases', 'cs-painting', 'cs-reno', 'cs-bys', 'cs-cjhs', 'social', 'branding', 'seo', 'sem', 'email', 'web', 'contact'];
+
+  // Scroll reveal: fade-up once as each [data-reveal] block enters view (AOS-style, 1s)
+  setupReveal() { try { this._setupReveal(); } catch (e) {} }
+  _setupReveal() {
+    if (!this._revealFallback) {
+      // Safety net: reveal anything hidden that has scrolled into view, whichever element scrolls
+      this._revealFallback = () => document.querySelectorAll('[data-reveal]').forEach(el => {
+        if (el.style.opacity === '0' && el.getBoundingClientRect().top < window.innerHeight * 0.95) {
+          if (this._io) this._io.unobserve(el);
+          el.style.opacity = '';
+        }
+      });
+      document.addEventListener('scroll', this._revealFallback, { capture: true, passive: true });
+    }
+    if (!this._io) {
+      this._io = new IntersectionObserver(entries => entries.forEach(en => { try {
+        if (!en.isIntersecting) return;
+        const el = en.target; this._io.unobserve(el);
+        el.animate([{ opacity: 0, transform: 'translateY(40px)' }, { opacity: 1, transform: 'none' }], { duration: 1000, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'none' });
+        el.style.opacity = '';
+      } catch (e) {} }), { threshold: 0.12 });
+    }
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el._rv) return; el._rv = true;
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.9) return; // already on screen: show immediately
+      el.style.opacity = '0';
+      this._io.observe(el);
+    });
+  }
+
+  componentDidMount() {
+    const h = location.hash.slice(1);
+    if (this.pages.includes(h)) this.setState({ page: h }, () => requestAnimationFrame(() => this.setupReveal()));
+    this._onHash = () => { const p = location.hash.slice(1); if (this.pages.includes(p)) { this.setState({ page: p, menuOpen: false, sent: false }, () => requestAnimationFrame(() => this.setupReveal())); window.scrollTo(0, 0); } };
+    this._onScroll = () => { const s = window.scrollY > 50; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('hashchange', this._onHash);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    requestAnimationFrame(() => this.setupReveal());
+    this._onResize = () => {
+      const d = window.innerWidth >= 1200, n = window.innerWidth < 992;
+      if (d !== this.state.desktop) this.setState({ desktop: d, menuOpen: false });
+      if (n !== this.state.narrow) this.setState({ narrow: n });
+    };
+    window.addEventListener('resize', this._onResize);
+    this._onResize();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this._onHash);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    this._io = null;
+    if (this._revealFallback) { document.removeEventListener('scroll', this._revealFallback, true); this._revealFallback = null; }
+    window.removeEventListener('resize', this._onResize);
+  }
+
+  caseVals(p) {
+    if (!this.caseStudies['cs-bys']) this.caseStudies['cs-bys'] = this.bys;
+    if (!this.caseStudies['cs-cjhs']) this.caseStudies['cs-cjhs'] = this.cjhs;
+    const raw = this.caseStudies[p] || this.caseStudies['cs-painting'];
+    const fourCol = raw.fourCol !== false;
+    const cs = Object.assign({ beforeLabel: 'Before', afterTitle: 'What Backpack changed', wallTitle: 'The ads that did it.' }, raw, {
+      hero: raw.hero.map(s => Object.assign({ hasBefore: !!s.before }, s)),
+      hasClient: raw.client.length > 0, hasInsight: !!raw.insight, insight: raw.insight || [], compare: raw.compare || [],
+      fourCol, tableMin: fourCol ? '720px' : '0px',
+      calloutParas: Array.isArray(raw.callout) ? raw.callout : [raw.callout],
+      showBordered: !!raw.calloutBordered && (Array.isArray(raw.callout) ? raw.callout.length > 0 : !!raw.callout),
+      changes: raw.changes.map((c, i) => Object.assign({ n: i + 1 }, c)),
+      rows: raw.rows.map((r, i) => ({ m: r[0], a: r[1], b: r[2], c: r[3], bg: i % 2 ? '#FFFFFF' : '#F5F5F5', chBg: r[4] ? '#CEED5D' : 'transparent' })),
+      calloutPlain: !raw.calloutBordered && !!raw.callout, hasCallout: Array.isArray(raw.callout) ? raw.callout.length > 0 : !!raw.callout, hasChips: raw.chips.length > 0,
+    });
+    const mobile = !!this.state.narrow;
+    const tab = this.state.csTab || 'before';
+    return {
+      isCases: p === 'cases', isCase: !!this.caseStudies[p], isCsPainting: p === 'cs-painting', isCsReno: p === 'cs-reno', isCsBys: p === 'cs-bys', goCsBys: this.go('cs-bys'), isCsCjhs: p === 'cs-cjhs', goCsCjhs: this.go('cs-cjhs'), cs,
+      goCases: this.go('cases'), goCsPainting: this.go('cs-painting'), goCsReno: this.go('cs-reno'),
+      csMobile: mobile,
+      ledgerCols: mobile ? 'minmax(0,1fr)' : 'repeat(2,minmax(0,1fr))',
+      showBeforeCol: !mobile || tab === 'before', showAfterCol: !mobile || tab === 'after',
+      showBefore: () => this.setState({ csTab: 'before' }, () => this.setupReveal()), showAfter: () => this.setState({ csTab: 'after' }, () => this.setupReveal()),
+      tabBeforeBg: tab === 'before' ? '#282828' : 'transparent', tabBeforeFg: tab === 'before' ? '#fff' : '#282828',
+      tabAfterBg: tab === 'after' ? '#5D84ED' : 'transparent', tabAfterFg: tab === 'after' ? '#fff' : '#282828',
+    };
+  }
+
+  go = p => e => {
+    if (e) e.preventDefault();
+    history.replaceState(null, '', '#' + p);
+    this.setState({ page: p, hoverSvc: 0, menuOpen: false }, () => requestAnimationFrame(() => this.setupReveal()));
+    window.scrollTo(0, 0);
+  };
+
+  // "Moves": slow, subtle forward lean + drift
+  movesRef = el => {
+    if (!el || el._mv || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el._mv = el.animate([
+      { transform: 'translateX(0) skewX(0deg)' },
+      { transform: 'translateX(4px) skewX(-3deg)', offset: .5 },
+      { transform: 'translateX(0) skewX(0deg)' }
+    ], { duration: 5000, iterations: Infinity, easing: 'ease-in-out' });
+  };
+
+  // Dot halo: continuous 30s rotation (matches original `animation: rotate 30s linear infinite`)
+  spinRef = el => {
+    if (!el || el._spin) return;
+    el._spin = el.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 30000, iterations: Infinity });
+  };
+
+  // Our Approach: on hover the gradient ring spins (1s loop) while the inner icon counter-rotates to stay upright
+  ringRef = el => {
+    if (!el || el._wired) return;
+    el._wired = true;
+    const inner = el.firstElementChild;
+    let a, b;
+    el.addEventListener('mouseenter', () => {
+      a = el.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 1000, iterations: Infinity });
+      b = inner.animate([{ transform: 'rotate(0deg)' }, { transform: 'rotate(-360deg)' }], { duration: 1000, iterations: Infinity });
+    });
+    el.addEventListener('mouseleave', () => { a && a.cancel(); b && b.cancel(); });
+  };
+
+  renderVals() {
+    const p = this.state.page, hv = this.state.hoverSvc;
+    const svc = { leave: () => this.setState({ hoverSvc: 0 }) };
+    for (let i = 1; i <= 6; i++) {
+      svc['o' + i] = hv === i ? 1 : 0;
+      svc['e' + i] = () => this.setState({ hoverSvc: i });
+    }
+    const sp = this.subPages[p];
+    const sub = Object.assign({}, sp || this.subPages.social);
+    Object.keys(this.subPages).forEach(k => { sub['go_' + k] = this.go(k); sub['is_' + k] = p === k; });
+    return {
+      isSub: !!sp, sub,
+      ...this.caseVals(p),
+      isDesktop: this.state.desktop !== false, isMobile: this.state.desktop === false,
+      menuOpen: this.state.desktop === false && !!this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      bars: this.state.menuOpen
+        ? { t: '21px', b: '21px', r1: 'rotate(45deg)', r2: 'rotate(-45deg)', mid: 0 }
+        : { t: '11px', b: '31px', r1: 'none', r2: 'none', mid: 1 },
+      isHome: p === 'home', isAbout: p === 'about', isMarketing: p === 'marketing', isRecruitment: p === 'recruitment',
+      goHome: this.go('home'), goAbout: this.go('about'), goMarketing: this.go('marketing'), goRecruitment: this.go('recruitment'),
+      navPad: this.state.scrolled ? '10px 0' : '20px 0',
+      footerGap: p === 'marketing' ? '0px' : '0px',
+      spinRef: this.spinRef, ringRef: this.ringRef, svc, movesRef: this.movesRef,
+      isContact: p === 'contact', goContact: this.go('contact'), sent: !!this.state.sent, notSent: !this.state.sent,
+      sendForm: e => {
+        e.preventDefault();
+        const f = new FormData(e.target), g = k => (f.get(k) || '').toString().trim();
+        const body = ['Name: ' + g('name'), 'Business: ' + g('business'), 'Email: ' + g('email'), 'Phone: ' + g('phone'), 'Needs: ' + g('need'), '', g('notes')].join('\n');
+        window.location.href = 'mailto:contact@backpackdigitalmedia.com?subject=' + encodeURIComponent('Website enquiry: ' + g('business')) + '&body=' + encodeURIComponent(body);
+        this.setState({ sent: true });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
