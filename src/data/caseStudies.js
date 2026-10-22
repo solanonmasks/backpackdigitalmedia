@@ -249,7 +249,7 @@ export const caseStudyList = [
     key: 'cs-cjhs',
     image: '/assets/img/case-studies/cjhs/home.png',
     imageAlt: 'cjhs.ca homepage',
-    imageCrop: true, // tall screenshot: crop to a square from the top-left
+    imageWide: true, // wide screenshot: show it whole instead of as a square
     title: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
     stats: [
       { after: '15 days', label: 'To first design' },

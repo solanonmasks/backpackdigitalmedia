@@ -5,7 +5,7 @@ Add one new case study, **Calgary John Howard Society · Website rebuild**, to t
 ## What to add
 1. **Route:** `/case-studies/cjhs` (in the prototype it's `#cs-cjhs`).
 2. **Index card:** a fourth row on the Case Studies index, after BankYourSalary. Same card component as the others.
-   - Image: `assets/img/case-studies/cjhs/home.png`, cropped square with `object-fit:cover; object-position:left top`.
+   - Image: `assets/img/case-studies/cjhs/home.png`, shown whole at its natural wide ratio (no square crop, no background fill): `width:100%; height:auto`.
    - Label: "Calgary John Howard Society · Website rebuild"
    - Headline: "A 75-year-old nonprofit, three audiences, one website that finally serves all of them"
    - Lime stat pills: "15 days" (To first design) and "12 weeks" (To full review site). There are no before→after values.
