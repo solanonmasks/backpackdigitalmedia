@@ -246,6 +246,9 @@ const seoDescription = cs.seoDescription || cs.summary[0];
           {cs.chips.map((chip) => <span style="background:var(--pale-blue);font-size:18px;font-weight:500;padding:8px 18px;border-radius:999px;">{chip}</span>)}
         </div>
       )}
+      {cs.relatedLink && (
+        <a href={cs.relatedLink.href} class="pill btn-blue" style="align-self:flex-start;">{cs.relatedLink.label}</a>
+      )}
     </div>
   </section>
 
