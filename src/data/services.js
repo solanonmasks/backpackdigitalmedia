@@ -10,6 +10,38 @@ export const howWeWork = [
 ];
 
 export const services = {
+  'meta-ads': {
+    name: 'Meta Ads Management',
+    seoTitle: 'Meta Ads Management in Vancouver',
+    seoDescription: 'Facebook and Instagram ads that bring in real leads and customers. Strategy, creative, targeting and monthly optimization.',
+    title: 'Facebook and Instagram ads that bring in customers.',
+    subtitle: 'Campaigns measured by leads and sales, with every result tracked.',
+    button: 'Get More Leads',
+    image: '/assets/img/marketing_sub_pages/5.svg',
+    what: [
+      'Most businesses have boosted a post and gotten nothing back. Meta ads start working when the audience, the offer and the creative all match what your customers actually care about.',
+      'We choose the setup based on your goals and what we’ve seen work, whether that’s an instant lead form, a landing page or something else. Then we watch lead quality closely, because a cheap lead who never picks up the phone isn’t a good lead. We handle the ads, the targeting and the tracking, and keep testing new creative every month.',
+    ],
+    highlights: [
+      { title: 'Campaign strategy.', text: 'Built around your offer, your customers and the work you want more of.' },
+      { title: 'Ad creative.', text: 'Static and video ads with copy written for your business.' },
+      { title: 'Audience targeting.', text: 'The right people in your service area, plus retargeting for people who’ve already shown interest.' },
+      { title: 'Lead generation.', text: 'Lead forms or landing pages, chosen to fit your goals.' },
+      { title: 'Tracking.', text: 'Pixel and conversion tracking so you can see what every lead costs.' },
+      { title: 'Monthly optimization.', text: 'New creative, audiences and budget adjustments based on what’s working.' },
+    ],
+    faq: [
+      { q: 'How much should I spend on ads?', a: 'It depends on your market and your goals. We’ll recommend a budget during planning and show you exactly how it splits between ad spend and our management.' },
+      { q: 'Who owns the ad account?', a: 'You do. Your ad account, your data and your campaign history stay with your business.' },
+      { q: 'Do you make the ads?', a: 'Yes. Ad creative and copy are part of the service. We often find video outperforms other content types, so we use it wherever we can. Some clients send us their own footage, and for others we shoot on-site.' },
+      { q: 'How do I know it’s working?', a: 'We report on leads, cost per lead and which leads turned into customers, in plain language.' },
+    ],
+    cta: {
+      title: 'Ready for more leads?',
+      text: 'Tell us which jobs you want more of, and we’ll sketch out a campaign to go after them.',
+      button: 'Let’s Talk Ads',
+    },
+  },
   social: {
     name: 'Social Media Management',
     seoTitle: 'Social Media Management in Vancouver',
