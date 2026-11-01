@@ -18,6 +18,7 @@ export const services = {
     subtitle: 'Campaigns measured by leads and sales, with every result tracked.',
     button: 'Get More Leads',
     image: '/assets/img/marketing_sub_pages/5.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/5-animated.svg',
     what: [
       'Most businesses have boosted a post and gotten nothing back. Meta ads start working when the audience, the offer and the creative all match what your customers actually care about.',
       'We choose the setup based on your goals and what we’ve seen work, whether that’s an instant lead form, a landing page or something else. Then we watch lead quality closely, because a cheap lead who never picks up the phone isn’t a good lead. We handle the ads, the targeting and the tracking, and keep testing new creative every month.',
