@@ -1,0 +1,7 @@
+---
+// Contractor Marketing page. Uses the same layout as the service pages
+// (src/components/ServicePage.astro). Text lives in src/data/services.js.
+import ServicePage from '../components/ServicePage.astro';
+import { contractor } from '../data/services.js';
+---
+<ServicePage s={contractor} />

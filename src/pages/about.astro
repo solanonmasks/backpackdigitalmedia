@@ -2,17 +2,33 @@
 import Base from '../layouts/Base.astro';
 import CtaPanel from '../components/CtaPanel.astro';
 
-// ✏️ Core values
+// ✏️ Core values. Only three icon shapes exist, so they repeat in order.
 const values = [
-  { icon: 1, title: 'Clarity:', text: 'We make it simple.' },
-  { icon: 2, title: 'Collaboration:', text: 'We work as your partner.' },
-  { icon: 3, title: 'Results:', text: 'We focus on what matters —your growth.' },
+  { icon: 1, title: 'No s*** leaves the shop.', text: 'If it isn’t good enough to put our name on, it doesn’t go out.' },
+  { icon: 2, title: 'We treat your business like our own.', text: 'Every dollar of your budget gets spent like it’s ours.' },
+  { icon: 3, title: 'We find one thing to do better every time.', text: 'Every campaign, every month.' },
+  { icon: 1, title: 'When in doubt, we ask.', text: 'When asked, we help.' },
+  { icon: 2, title: 'We tell the truth, especially when it’s bad news.', text: 'You’ll hear it from us first, along with what we’re doing about it.' },
 ];
+
+// ✏️ Details about Iqbal for Google and AI tools (structured data, not shown on the page).
+const iqbalInfo = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Iqbal Kassam',
+  jobTitle: 'President and Founder',
+  worksFor: {
+    '@type': 'ProfessionalService',
+    name: 'Backpack Digital Media',
+    url: 'https://www.backpackdigitalmedia.com',
+  },
+  // ✏️ LinkedIn: add a line here like  sameAs: ['https://www.linkedin.com/in/...'],
+};
 
 // ✏️ Team. Photos live in public/assets/img/home2/team/
 // (Open item from the handoff: confirm Garik and Ramneek are still current.)
 const team = [
-  { photo: 1, name: 'Iqbal', role: 'President', bio: 'Iqbal is the founder of Backpack Digital Media. With 8+ years in the industry, he sets the strategic direction for the agency, ensuring we deliver impactful results for every client. His focus on collaboration and innovation is at the heart of everything we do.' },
+  { photo: 1, name: 'Iqbal', role: 'President', bio: 'Iqbal founded Backpack Digital Media after starting out at Yellow Pages and building Mediafy, a recruitment marketing agency for national employers. With 8+ years in the industry, he leads strategy across our accounts and is usually first into a new client’s numbers.' },
   { photo: 2, name: 'Garik', role: 'Creative Director', bio: 'As Creative Director, Garik brings bold ideas to life. He leads the creative vision for all projects, ensuring our designs and campaigns don’t just look good but achieve results. Garik’s talent for turning ideas into engaging visuals makes him a driving force for client success.' },
   { photo: 3, name: 'Ramneek', role: 'Graphic Designer', bio: 'Ramneek is our go-to graphic designer who transforms concepts into stunning visuals. From branding materials to social media graphics, Ramneek combines creativity with precision to deliver designs that captivate and inspire.' },
   { photo: 4, name: 'Steven', role: 'Senior Account Manager', bio: 'Steven ensures our clients are always supported and their goals are achieved. With a strong background in client management and strategy, he’s the bridge between ideas and execution, ensuring projects stay on track and deliver results.' },
@@ -21,11 +37,12 @@ const team = [
 ];
 ---
 <Base title="About Our Vancouver Marketing Agency" description="Meet the Backpack Digital Media team: a Vancouver agency running ads, content, websites and recruitment marketing for clients across Canada and the US.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(iqbalInfo)} />
   <!-- Hero panel -->
   <section style="margin-top:50px;">
     <div style="max-width:1320px;margin:0 auto;background:#282828 url(/assets/img/home2/header/main.png) no-repeat center center;background-size:cover;padding:clamp(40px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:center;">
       <div class="stack" style="padding:clamp(24px,4vw,50px);gap:24px;align-items:flex-start;">
-        <h1 class="h1 white">Your partner in <span class="gradient-text">growth-focused</span> marketing.</h1>
+        <h1 class="h1 white">A Vancouver marketing agency that <span class="gradient-text">learns your business</span> first.</h1>
         <a href="/contact/" class="btn btn-lime">Let's Grow Together</a>
       </div>
       <div style="width:80%;"><img src="/assets/img/home2/header/logo.svg" alt="" style="width:100%;display:block;" /></div>
@@ -37,6 +54,7 @@ const team = [
     <div class="container stack" style="gap:16px;">
       <h2 class="h2">Who We Are</h2>
       <p class="lead">Backpack is a Vancouver marketing agency built by people who have spent their careers selling and building marketing for businesses of every kind. We run campaigns, content, websites and recruitment advertising for clients across Canada and the US, from restaurants and retailers to manufacturers, senior living operators and national employers, and for the past two years we have also been the production team behind other agencies, building the work they sell to their clients. That side of the business taught us to deliver on scope, on time, every time. The direct side is where we get to go deeper: learning a business from the inside, finding what makes it different, and building marketing around that instead of around a template.</p>
+      <p class="lead">When you’re local, we’ll meet you in person. Our office is in Kerrisdale, Vancouver, with a studio space for interviews, talking-head video and product shoots.</p>
     </div>
   </section>
 

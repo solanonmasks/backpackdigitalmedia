@@ -27,7 +27,7 @@ Upload the contents of `dist/` to your host, or connect this repo to Netlify, Ve
 | --- | --- |
 | Email, address, opening hours, nav links | `src/data/site.js` |
 | Where the contact form sends to | `FORM_ENDPOINT` in `src/data/site.js` |
-| Service page text, FAQs and the shared "How we work" steps (also the Recruitment Marketing page) | `src/data/services.js` |
+| Service page text, FAQs and the shared "How we work" steps (also the Recruitment and Contractor Marketing pages) | `src/data/services.js` |
 | Service page layout | `src/components/ServicePage.astro` |
 | Old addresses that redirect | `redirects` in `astro.config.mjs` |
 | Case study text and numbers | `src/data/caseStudies.js` |
@@ -47,6 +47,7 @@ Text you're likely to edit is marked with ✏️ in the code.
 | About Us | `/about/` |
 | Digital Marketing | `/digital-marketing/` |
 | Recruitment Marketing | `/recruitment-marketing/` |
+| Contractor Marketing | `/contractor-marketing/` (text in `src/data/services.js`) |
 | Service pages | `/services/meta-ads/`, `/services/sem/` (Google Ads), `/services/seo/`, `/services/web/`, `/services/social/`, `/services/video/` |
 | Old pages | `/services/branding/` redirects to `/services/video/`. `/services/email/` is live but unlinked and not in the sitemap. |
 | Case Studies | `/case-studies/` |

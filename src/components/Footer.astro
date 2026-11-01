@@ -10,6 +10,7 @@ import { contact, footerLinks } from '../data/site.js';
         <div class="footer-details">
           <p>{contact.addressLine1}, {contact.addressLine2}</p>
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
+          <a href={contact.phoneLink}>{contact.phone}</a>
           <p>{contact.hoursDays}, {contact.hoursTime}</p>
         </div>
       </div>

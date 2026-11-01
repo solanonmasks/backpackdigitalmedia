@@ -77,6 +77,24 @@ const faqSchema = s.faq && {
     </div>
   </section>
 
+  <!-- Results (optional): simple cards linking to case studies, no big numbers -->
+  {s.results && (
+    <section data-reveal style="margin-top:50px;">
+      <div class="container stack" style="gap:30px;">
+        <h2 class="h2">{s.results.title}</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;">
+          {s.results.items.map((r) => (
+            <a href={r.href} class="svc-card">
+              <h3>{r.title}</h3>
+              <p>{r.text}</p>
+              <span class="more">Read the case study →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Key highlights -->
   <section style="margin:50px 0 70px;">
     <div class="container">
@@ -131,6 +149,7 @@ const faqSchema = s.faq && {
     <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;">
       <a href="/digital-marketing/" class="pill btn-blue">See all our services</a>
       <a href="/case-studies/" class="pill btn-blue">See our case studies</a>
+      {(s.extraLinks || []).map((l) => <a href={l.href} class="pill btn-blue">{l.label}</a>)}
     </div>
   </section>
 

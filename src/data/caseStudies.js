@@ -7,6 +7,7 @@ const raw = {
   'cs-painting': {
     descriptor: 'California painting contractor · Meta Ads',
     headline: '$15,000+ in booked painting jobs from under $1,000 in Meta ad spend',
+    relatedLink: { href: '/contractor-marketing/', label: 'See how we work with contractors' },
     seoTitle: 'Painting Contractor Meta Ads Case Study',
     seoDescription: 'How new Meta ads took a painting contractor from 2 leads to 17, cut cost per lead from $173 to $58 and produced $15,000+ in booked jobs.',
     hero: [
@@ -55,6 +56,7 @@ const raw = {
   'cs-reno': {
     descriptor: 'Montana renovation contractor · Meta Ads',
     headline: 'Same monthly budget, six times the leads',
+    relatedLink: { href: '/contractor-marketing/', label: 'See how we work with contractors' },
     seoTitle: 'Renovation Contractor Meta Ads Case Study',
     seoDescription: 'How a renovation contractor went from 4 to about 23 consultation requests a month on the same Meta ad budget, with cost per lead down 84%.',
     hero: [
