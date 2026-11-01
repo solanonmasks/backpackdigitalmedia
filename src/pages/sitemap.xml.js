@@ -11,6 +11,7 @@ const fixedPages = [
   '/about/',
   '/digital-marketing/',
   '/recruitment-marketing/',
+  '/contractor-marketing/',
   '/case-studies/',
   '/contact/',
 ];
