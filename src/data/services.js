@@ -2,6 +2,13 @@
 // NOTE from the design handoff: this copy has not been rewritten yet for
 // the six new services. Edit the text here when it is ready.
 
+// ✏️ "How we work" steps. The same three steps appear on every service page.
+export const howWeWork = [
+  { title: 'We learn your business.', text: 'What you sell, who buys it, what they ask before they buy, and why they pick you over the competition.' },
+  { title: 'We build the plan around it.', text: 'The channels, the message and the budget come from what we learned, and we walk you through the reasoning first.' },
+  { title: 'We keep improving it.', text: 'We’re in your campaigns every month, reporting in plain language, and you can always reach us.' },
+];
+
 export const services = {
   social: {
     title: 'Grow Your Brand on Social Media.',
