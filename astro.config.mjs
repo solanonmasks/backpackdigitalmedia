@@ -2,5 +2,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://backpackdigitalmedia.com',
+  site: 'https://www.backpackdigitalmedia.com',
 });
