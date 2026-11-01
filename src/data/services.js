@@ -11,12 +11,37 @@ export const howWeWork = [
 
 export const services = {
   social: {
-    title: 'Grow Your Brand on Social Media.',
-    subtitle: 'Strategy. Content. Results.',
-    button: 'Let’s Grow Your Social Media',
+    name: 'Social Media Management',
+    seoTitle: 'Social Media Management in Vancouver',
+    seoDescription: 'On-brand social media content, scheduling and community management that builds trust with your customers.',
+    title: 'Social media that builds trust in your brand.',
+    subtitle: 'Planned content, consistent posting and replies in your voice.',
+    button: 'Let’s Talk Social',
     image: '/assets/img/marketing_sub_pages/1.svg',
-    what: 'We help businesses build meaningful connections on social media platforms with engaging content, consistent strategy, and measurable results.',
-    highlights: ['Social Media Strategy', 'Content Creation & Scheduling', 'Social Advertising Campaigns', 'Community Management'],
+    what: [
+      'Customers check your social pages before they reach out. A quiet or patchy feed makes them wonder whether you’re still open.',
+      'We start by getting deep into your business: what you do, who you serve, and just as importantly, how you talk. Your voice and tone matter as much as your services. Our goal is to become an extension of your team, fluent enough in your language that every post sounds like it came from you.',
+      'From there, your content strategy is built around your goals, with a focus on high-impact posts people want to share. Where we can, that means real photos and video of your team and your work, and we can shoot those for you.',
+    ],
+    highlights: [
+      { title: 'Content strategy.', text: 'A monthly calendar built around your goals and what your audience cares about.' },
+      { title: 'Post design and copy.', text: 'Graphics and captions that look and sound like your business.' },
+      { title: 'Short-form video.', text: 'Reels and stories, with on-site shoots available.' },
+      { title: 'Scheduling.', text: 'Everything posted on time across your channels.' },
+      { title: 'Community management.', text: 'Comments and messages answered in your voice.' },
+      { title: 'Monthly reporting.', text: 'What’s working, what we’re changing and why.' },
+    ],
+    faq: [
+      { q: 'Which platforms do you manage?', a: 'Usually Instagram and Facebook, plus LinkedIn for businesses that sell to other businesses. We focus on wherever your customers actually spend their time.' },
+      { q: 'Do I approve posts?', a: 'Yes. You review the content calendar before anything goes live.' },
+      { q: 'What’s the difference between organic social and ads?', a: 'Organic posts keep the people who already follow you engaged and build trust. Ads reach people who haven’t heard of you yet. The two support each other.' },
+      { q: 'How often will you post?', a: 'It depends on your package and goals. We’ll recommend a schedule during planning.' },
+    ],
+    cta: {
+      title: 'Want a feed you’re proud of?',
+      text: 'Send us your current pages and we’ll tell you what we’d change first.',
+      button: 'Let’s Talk Social',
+    },
   },
   branding: {
     title: 'Stand Out with a Strong Brand.',
