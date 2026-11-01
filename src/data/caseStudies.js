@@ -7,6 +7,8 @@ const raw = {
   'cs-painting': {
     descriptor: 'California painting contractor · Meta Ads',
     headline: '$15,000+ in booked painting jobs from under $1,000 in Meta ad spend',
+    seoTitle: 'Painting Contractor Meta Ads Case Study',
+    seoDescription: 'How new Meta ads took a painting contractor from 2 leads to 17, cut cost per lead from $173 to $58 and produced $15,000+ in booked jobs.',
     hero: [
       { before: '2', after: '17', label: 'Leads' },
       { before: '$173', after: '$58', label: 'Cost per lead' },
@@ -53,6 +55,8 @@ const raw = {
   'cs-reno': {
     descriptor: 'Montana renovation contractor · Meta Ads',
     headline: 'Same monthly budget, six times the leads',
+    seoTitle: 'Renovation Contractor Meta Ads Case Study',
+    seoDescription: 'How a renovation contractor went from 4 to about 23 consultation requests a month on the same Meta ad budget, with cost per lead down 84%.',
     hero: [
       { before: '4', after: '~23', label: 'Leads per month' },
       { before: '$343', after: '$56', label: 'Cost per lead' },
@@ -103,6 +107,8 @@ const raw = {
 const bys = {
   descriptor: 'BankYourSalary · Recruitment platform for northern relocation roles',
   headline: '43 relocation-ready candidates in 11 weeks, at $115 each',
+  seoTitle: 'BankYourSalary Recruitment Case Study',
+  seoDescription: 'How Backpack built BankYourSalary.com, a recruitment platform that delivered 43 relocation-ready candidates in 11 weeks at $115 each.',
   hero: [
     { after: '43', label: 'Completed registrations' },
     { after: '$115', label: 'Cost per registration' },
@@ -165,6 +171,8 @@ raw['cs-bys'] = bys;
 const cjhs = {
   descriptor: 'Calgary John Howard Society · Website rebuild',
   headline: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
+  seoTitle: 'Nonprofit Website Case Study: CJHS',
+  seoDescription: 'How Backpack restructured, designed and built a new website for the Calgary John Howard Society that serves donors, families and agencies.',
   wallTitle: 'The site we built.',
   hero: [
     { after: '15 days', label: 'Kickoff to first design' },

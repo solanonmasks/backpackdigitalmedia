@@ -8,8 +8,12 @@ export function getStaticPaths() {
 }
 
 const s = services[Astro.params.slug];
+// Search title and description: use seoTitle / seoDescription from services.js
+// when set, otherwise fall back to the page heading and intro text.
+const seoTitle = s.seoTitle || s.title.replace(/\.$/, '');
+const seoDescription = s.seoDescription || s.what;
 ---
-<Base title={s.title.replace(/\.$/, '')} description={s.what}>
+<Base title={seoTitle} description={seoDescription}>
   <section style="margin-top:50px;">
     <div class="bg-blue" style="max-width:1320px;margin:0 auto;padding:clamp(50px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:24px;align-items:center;">
       <div data-reveal class="stack" style="padding:clamp(24px,4vw,50px);gap:20px;align-items:flex-start;">

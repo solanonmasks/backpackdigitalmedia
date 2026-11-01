@@ -10,8 +10,12 @@ export function getStaticPaths() {
 const { csKey } = Astro.props;
 const cs = getCaseStudy(csKey);
 const img = '/assets/img/case-studies';
+// Search title and description: use seoTitle / seoDescription from caseStudies.js
+// when set, otherwise fall back to the headline and first summary paragraph.
+const seoTitle = cs.seoTitle || cs.headline;
+const seoDescription = cs.seoDescription || cs.summary[0];
 ---
-<Base title={cs.headline} description={cs.summary[0]}>
+<Base title={seoTitle} description={seoDescription}>
   <!-- Hero stats -->
   <section class="bg-dark" style="padding:96px 0;">
     <div class="container-wide stack" style="gap:28px;">
