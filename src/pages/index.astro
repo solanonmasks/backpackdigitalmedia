@@ -2,7 +2,17 @@
 import Base from '../layouts/Base.astro';
 import CtaPanel from '../components/CtaPanel.astro';
 
-const clients = [0, 1, 2, 3, 4, 5, 6];
+// ✏️ Client logos: file number in public/assets/img/home/clients/ and the
+// client's name (used as the image's alt text for screen readers and Google).
+const clients = [
+  { n: 0, name: 'The North West Company' },
+  { n: 1, name: 'Calgary John Howard Society' },
+  { n: 2, name: 'Urban Barn' },
+  { n: 3, name: 'Fort Vermilion School Division' },
+  { n: 4, name: 'Meraki Resources' },
+  { n: 5, name: 'Conuma Resources' },
+  { n: 6, name: 'Kal Tire' },
+];
 
 // ✏️ "What we do" cards
 const whatWeDo = [
@@ -43,8 +53,8 @@ const steps = [
   <!-- Client logos -->
   <section data-reveal style="margin-top:100px;">
     <div class="container" style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
-      {clients.map((n) => (
-        <img src={`/assets/img/home/clients/${n}.png`} alt="Client logo" loading="lazy" style="width:170px;max-width:calc(33% - 10px);display:block;" />
+      {clients.map((c) => (
+        <img src={`/assets/img/home/clients/${c.n}.png`} alt={c.name} loading="lazy" style="width:170px;max-width:calc(33% - 10px);display:block;" />
       ))}
     </div>
   </section>
