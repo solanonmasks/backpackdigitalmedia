@@ -256,3 +256,46 @@ export const recruitment = {
     button: 'Let’s Talk Hiring',
   },
 };
+
+// ✏️ Contractor Marketing page (/contractor-marketing/). Same layout as the
+// service pages, at its own address.
+export const contractor = {
+  name: 'Marketing for Contractors and Trades',
+  seoTitle: 'Marketing for Contractors and Trades',
+  seoDescription: 'Meta ads, Google Ads and websites for renovation, painting and home service businesses, with every lead qualified and tracked.',
+  title: 'Marketing for contractors and home service businesses.',
+  subtitle: 'More of the jobs you actually want, from ads that qualify every lead before it reaches your phone.',
+  button: 'Let’s Talk Leads',
+  what: [
+    'A lot of the contractors we talk to have tried marketing before. They boosted posts, paid an agency, or bought leads that were also sent to three other companies, and ended up chasing people who were never going to book. What they want is simple: more of the right jobs, at a cost that makes sense.',
+    'We build lead generation around the work you want more of: the right project types, in your service area, at the job size you’re after. The ads ask qualifying questions up front, so the wrong fits get filtered out before they reach your phone, and every lead is tracked so you know exactly what it costs.',
+    'Built for renovation, painting, electrical, landscaping, fencing and other home service businesses.',
+  ],
+  results: {
+    title: 'Results from contractors we work with',
+    items: [
+      { href: '/case-studies/painting/', title: 'Painting contractor, California', text: 'On the same daily budget, cost per lead dropped from $173 to $58, bringing in 17 leads and more than $15,000 in booked jobs.' },
+      { href: '/case-studies/renovation/', title: 'Renovation contractor, Montana', text: 'On the same budget, consultation requests went from 4 a month to about 23, with cost per lead down 84%.' },
+    ],
+  },
+  highlights: [
+    { title: 'Meta ads.', text: 'Before-and-after creative and lead forms built for homeowners in your area.' },
+    { title: 'Google Ads.', text: 'Show up when someone nearby searches for your trade.' },
+    { title: 'Lead qualification.', text: 'Questions on project type, scope, timing and budget, so you spend your time on real jobs.' },
+    { title: 'Websites.', text: 'Fast sites built around getting the call, hosted and maintained by us.' },
+    { title: 'Google Business Profile.', text: 'A complete, active profile that helps you show up on the map.' },
+    { title: 'Video.', text: 'On-site shoots of your crew and your work, for ads and social.' },
+  ],
+  faq: [
+    { q: 'Are the leads shared with other contractors?', a: 'No. Every lead comes from your own ads and goes only to you.' },
+    { q: 'What does a lead cost?', a: 'It depends on your trade, your area and your average job size. We’ll tell you what to expect during planning, and you’ll see the real number every month.' },
+    { q: 'Do I need a new website?', a: 'Not always. Many of our campaigns send people to a lead form, so they can work with the site you already have. If your site is costing you jobs, we can build you a new one.' },
+    { q: 'Who owns the ad accounts?', a: 'You do. Your ad accounts, your data and your campaign history stay with your business.' },
+    { q: 'Do you work with contractors outside Vancouver?', a: 'Yes. We’re based in Vancouver and also run campaigns for contractors in other parts of Canada and the US.' },
+  ],
+  cta: {
+    title: 'Want more of the right jobs?',
+    text: 'Tell us your trade, your service area and the work you want more of, and we’ll put together a plan for your area.',
+    button: 'Let’s Talk Leads',
+  },
+};
