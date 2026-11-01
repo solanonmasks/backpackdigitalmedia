@@ -40,6 +40,7 @@ const needs = ['Leads from Meta or Google Ads', 'Video and content', 'Social med
 
         <div class="stack" style="gap:28px;padding-top:8px;">
           <div class="stack" style="gap:6px;"><p class="contact-label">Email</p><a href={`mailto:${contact.email}`} class="contact-value">{contact.email}</a></div>
+          <div class="stack" style="gap:6px;"><p class="contact-label">Phone</p><a href={contact.phoneLink} class="contact-value">{contact.phone}</a></div>
           <div class="stack" style="gap:6px;"><p class="contact-label">Office</p><p class="contact-value">{contact.addressLine1}<br />{contact.addressLine2}</p></div>
           <div class="stack" style="gap:6px;"><p class="contact-label">Hours</p><p class="contact-value">{contact.hoursDays}<br />{contact.hoursTime}</p></div>
         </div>
