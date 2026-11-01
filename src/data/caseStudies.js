@@ -261,10 +261,8 @@ export const caseStudyList = [
     imageAlt: 'cjhs.ca homepage',
     imageWide: true, // wide screenshot: show it whole instead of as a square
     title: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
-    stats: [
-      { after: '15 days', label: 'To first design' },
-      { after: '12 weeks', label: 'To full review site' },
-    ],
+    // A card shows its summary sentence if it has one, otherwise its stat pills.
+    summary: 'A 75-year-old Calgary nonprofit needed one website for donors, families and partner agencies. They hired us again within six weeks of launch to build their annual report site.',
   },
 ];
 
