@@ -118,6 +118,7 @@ export const services = {
     subtitle: 'Google Ads that put you in front of people who are ready to buy.',
     button: 'Get More Leads',
     image: '/assets/img/marketing_sub_pages/4.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/4-animated.svg',
     what: [
       'Someone searching for what you sell is already close to buying. Google Ads puts you at the top of those searches right away, while SEO builds over time.',
       'Most wasted Google Ads budget goes to searches that look relevant but never buy. Someone searching "how to fix a leaky tap" probably isn’t ready to hire a plumber. Someone searching "emergency plumber Vancouver" is a different story. We keep a close eye on what people actually searched before they clicked, block what isn’t working, and track every call and form, so you can see where the money goes and what it brings back.',
