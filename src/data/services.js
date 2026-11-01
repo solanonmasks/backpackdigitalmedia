@@ -42,6 +42,7 @@ export const services = {
       text: 'Tell us which jobs you want more of, and we’ll sketch out a campaign to go after them.',
       button: 'Let’s Talk Ads',
     },
+    extraLinks: [{ href: '/contractor-marketing/', label: 'Marketing for contractors' }],
   },
   social: {
     name: 'Social Media Management',
