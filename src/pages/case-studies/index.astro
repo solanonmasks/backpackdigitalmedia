@@ -24,14 +24,18 @@ import { caseStudyList, getCaseStudy } from '../../data/caseStudies.js';
           <div class="stack" style="gap:20px;align-items:flex-start;">
             <p style="font-size:16px;color:var(--blue);text-transform:uppercase;font-weight:500;letter-spacing:.04em;">{c.descriptor || getCaseStudy(c.key).descriptor}</p>
             <h2 style="font-size:clamp(30px,3.2vw,44px);font-weight:700;text-transform:uppercase;line-height:1.02;text-wrap:balance;">{c.title}</h2>
-            <div style="display:flex;flex-wrap:wrap;gap:12px;">
-              {c.stats.map((st) => (
-                <div class="stat-pill">
-                  <span class="v">{st.before && <small>{st.before} →</small>} {st.after}</span>
-                  <span class="l">{st.label}</span>
-                </div>
-              ))}
-            </div>
+            {c.summary ? (
+              <p style="font-size:20px;line-height:1.5;max-width:640px;text-wrap:pretty;">{c.summary}</p>
+            ) : (
+              <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                {c.stats.map((st) => (
+                  <div class="stat-pill">
+                    <span class="v">{st.before && <small>{st.before} →</small>} {st.after}</span>
+                    <span class="l">{st.label}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             <span style="background:var(--ink);color:#fff;font-size:20px;padding:10px 22px;border-radius:999px;margin-top:8px;">Read the case study →</span>
           </div>
         </a>
