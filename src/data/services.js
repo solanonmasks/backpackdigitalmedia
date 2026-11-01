@@ -161,6 +161,7 @@ export const services = {
     subtitle: 'Fast, modern sites that make it easy for customers to book, buy, call or enquire.',
     button: 'Start My Website',
     image: '/assets/img/marketing_sub_pages/6.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/6-animated.svg',
     what: [
       'A website can look good and still lose customers. If someone on a phone can’t quickly figure out how to book, call or ask a question, they go back and pick someone else.',
       'We start from what your customer came to do and build every page around it. We write the copy, set up the SEO basics, and then host and maintain the site after launch, so it stays fast and up to date.',
