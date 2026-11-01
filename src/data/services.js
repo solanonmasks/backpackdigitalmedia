@@ -187,4 +187,37 @@ export const services = {
       button: 'Let’s Talk Websites',
     },
   },
+  video: {
+    name: 'Video Production',
+    seoTitle: 'Video Production in Vancouver',
+    seoDescription: 'Video shoots at your location or our Vancouver office, edited into ready-to-post clips for social media, ads and your website.',
+    title: 'Video that shows people why to choose you.',
+    subtitle: 'Your people, your space and your work, filmed on-site and edited to post.',
+    button: 'Book a Shoot',
+    image: '/assets/img/marketing_sub_pages/2.svg',
+    what: [
+      'Video is how people get a feel for your business before they ever contact you. It shows your team, your work and your space in a way photos can’t.',
+      'Every shoot starts with what you want the video to do, whether that’s getting shared, bringing in leads or showing people what it’s like to work with you. We come to you, or you come to our Kerrisdale office, and we turn the footage into clips for social, ads and your website.',
+    ],
+    highlights: [
+      { title: 'On-location shoots.', text: 'We film at your business, with sessions sized to what you need.' },
+      { title: 'Short-form clips.', text: 'Reels and stories cut for each platform.' },
+      { title: 'Video ads.', text: 'Footage edited into ads for Meta and other channels.' },
+      { title: 'Office shoots.', text: 'Interviews, talking-head clips and product shots at our Kerrisdale office.' },
+      { title: 'Editing.', text: 'Captions, music and your branding on every clip.' },
+      { title: 'Recruitment video.', text: 'Employer brand videos and video job postings that show candidates the job, the team and the location.' },
+    ],
+    faq: [
+      { q: 'What do I need to prepare?', a: 'Very little. We send a shot plan ahead of time and handle the rest on the day.' },
+      { q: 'How many videos do I get?', a: 'We agree on the number of finished clips before the shoot, so you know exactly what you’re getting.' },
+      { q: 'Can the footage be used for ads?', a: 'Yes. We edit clips for regular posts and for ads.' },
+      { q: 'Can you shoot on a regular schedule?', a: 'Yes. Book a one-off shoot or set up recurring sessions to keep your content fresh.' },
+      { q: 'Where do you shoot?', a: 'At your business, or at our office in Kerrisdale, Vancouver. The office works well for interviews, talking-head content and product shots.' },
+    ],
+    cta: {
+      title: 'Ready to show people what you do?',
+      text: 'Tell us what you want people to see, and we’ll plan the shoot around it.',
+      button: 'Book a Shoot',
+    },
+  },
 };
