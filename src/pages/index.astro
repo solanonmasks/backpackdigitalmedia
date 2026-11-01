@@ -14,6 +14,33 @@ const clients = [
   { n: 6, name: 'Kal Tire' },
 ];
 
+// ✏️ Business details for Google (structured data, homepage only).
+// See https://developers.google.com/search/docs/appearance/structured-data/local-business
+const businessInfo = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Backpack Digital Media',
+  url: 'https://www.backpackdigitalmedia.com',
+  logo: 'https://www.backpackdigitalmedia.com/assets/img/logo.svg',
+  email: 'contact@backpackdigitalmedia.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Unit 209 - 5729 West Boulevard',
+    addressLocality: 'Vancouver',
+    addressRegion: 'BC',
+    postalCode: 'V6M 3W8',
+    addressCountry: 'CA',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:30',
+      closes: '17:30',
+    },
+  ],
+};
+
 // ✏️ "What we do" cards
 const whatWeDo = [
   { href: '/services/sem/', title: 'Meta and Google Ads', text: 'Campaigns built around a clear offer and creative that stops the scroll, whether the goal is bookings, enquiries, foot traffic or sales. Measured in results and cost per result, reported monthly.' },
@@ -33,6 +60,7 @@ const steps = [
 ];
 ---
 <Base description="Vancouver digital marketing agency: Meta and Google Ads, SEO and AI search, video, social, websites and recruitment marketing.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(businessInfo)} />
   <!-- Hero -->
   <section style="margin-top:100px;">
     <div class="container two-col">
