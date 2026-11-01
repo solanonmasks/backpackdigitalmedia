@@ -7,6 +7,8 @@ const raw = {
   'cs-painting': {
     descriptor: 'California painting contractor · Meta Ads',
     headline: '$15,000+ in booked painting jobs from under $1,000 in Meta ad spend',
+    seoTitle: 'Painting Contractor Meta Ads Case Study',
+    seoDescription: 'How new Meta ads took a painting contractor from 2 leads to 17, cut cost per lead from $173 to $58 and produced $15,000+ in booked jobs.',
     hero: [
       { before: '2', after: '17', label: 'Leads' },
       { before: '$173', after: '$58', label: 'Cost per lead' },
