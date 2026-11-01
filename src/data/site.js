@@ -26,4 +26,8 @@ export const navLinks = [
 ];
 
 // Footer links.
-export const footerLinks = [...navLinks, { href: '/contact/', label: 'Contact' }];
+export const footerLinks = [
+  ...navLinks,
+  { href: '/contractor-marketing/', label: 'Contractor marketing' },
+  { href: '/contact/', label: 'Contact' },
+];
