@@ -51,6 +51,7 @@ export const services = {
     subtitle: 'Planned content, consistent posting and replies in your voice.',
     button: 'Let’s Talk Social',
     image: '/assets/img/marketing_sub_pages/1.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/1-animated.svg',
     what: [
       'Customers check your social pages before they reach out. A quiet or patchy feed makes them wonder whether you’re still open.',
       'We start by getting deep into your business: what you do, who you serve, and just as importantly, how you talk. Your voice and tone matter as much as your services. Our goal is to become an extension of your team, fluent enough in your language that every post sounds like it came from you.',
