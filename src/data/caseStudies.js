@@ -107,6 +107,8 @@ const raw = {
 const bys = {
   descriptor: 'BankYourSalary · Recruitment platform for northern relocation roles',
   headline: '43 relocation-ready candidates in 11 weeks, at $115 each',
+  seoTitle: 'BankYourSalary Recruitment Case Study',
+  seoDescription: 'How Backpack built BankYourSalary.com, a recruitment platform that delivered 43 relocation-ready candidates in 11 weeks at $115 each.',
   hero: [
     { after: '43', label: 'Completed registrations' },
     { after: '$115', label: 'Cost per registration' },
