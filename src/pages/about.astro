@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 import CtaPanel from '../components/CtaPanel.astro';
 
-// ✏️ Core values. Only three icon shapes exist, so they repeat in order.
+// ✏️ Core values. Icons live in public/assets/img/home2/values/ (1.svg to 5.svg).
 const values = [
   { icon: 1, title: 'No s*** leaves the shop.', text: 'If it isn’t good enough to put our name on, it doesn’t go out.' },
   { icon: 2, title: 'We treat your business like our own.', text: 'Every dollar of your budget gets spent like it’s ours.' },
   { icon: 3, title: 'We find one thing to do better every time.', text: 'Every campaign, every month.' },
-  { icon: 1, title: 'When in doubt, we ask.', text: 'When asked, we help.' },
-  { icon: 2, title: 'We tell the truth, especially when it’s bad news.', text: 'You’ll hear it from us first, along with what we’re doing about it.' },
+  { icon: 4, title: 'When in doubt, we ask.', text: 'When asked, we help.' },
+  { icon: 5, title: 'We tell the truth, especially when it’s bad news.', text: 'You’ll hear it from us first, along with what we’re doing about it.' },
 ];
 
 // ✏️ Details about Iqbal for Google and AI tools (structured data, not shown on the page).
@@ -28,7 +28,7 @@ const iqbalInfo = {
 // ✏️ Team. Photos live in public/assets/img/home2/team/
 // (Open item from the handoff: confirm Garik and Ramneek are still current.)
 const team = [
-  { photo: 1, name: 'Iqbal', role: 'President', bio: 'Iqbal founded Backpack Digital Media after starting out at Yellow Pages and building Mediafy, a recruitment marketing agency for national employers. With 8+ years in the industry, he leads strategy across our accounts and is usually first into a new client’s numbers.' },
+  { photo: 1, name: 'Iqbal', role: 'President', bio: 'Iqbal founded Backpack Digital Media after starting out at Yellow Pages and learning the trade at several agencies along the way. With 8+ years in the industry, he leads strategy across our accounts and is usually first into a new client’s numbers.' },
   { photo: 2, name: 'Garik', role: 'Creative Director', bio: 'As Creative Director, Garik brings bold ideas to life. He leads the creative vision for all projects, ensuring our designs and campaigns don’t just look good but achieve results. Garik’s talent for turning ideas into engaging visuals makes him a driving force for client success.' },
   { photo: 3, name: 'Ramneek', role: 'Graphic Designer', bio: 'Ramneek is our go-to graphic designer who transforms concepts into stunning visuals. From branding materials to social media graphics, Ramneek combines creativity with precision to deliver designs that captivate and inspire.' },
   { photo: 4, name: 'Steven', role: 'Senior Account Manager', bio: 'Steven ensures our clients are always supported and their goals are achieved. With a strong background in client management and strategy, he’s the bridge between ideas and execution, ensuring projects stay on track and deliver results.' },
