@@ -2,6 +2,8 @@
 
 export const contact = {
   email: 'contact@backpackdigitalmedia.com',
+  phone: '(604) 229-4573',
+  phoneLink: 'tel:+16042294573', // same number, in the format phones use to dial
   addressLine1: 'Unit 209 - 5729 West Boulevard',
   addressLine2: 'Vancouver, BC',
   hoursDays: 'Monday to Friday',
