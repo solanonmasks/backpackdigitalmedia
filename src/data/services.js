@@ -148,6 +148,8 @@ export const services = {
     },
   },
   email: {
+    // Kept live but not linked anywhere, and left out of the sitemap.
+    inSitemap: false,
     title: 'Turn Emails into Results.',
     subtitle: 'Strategic campaigns that engage, convert, and retain customers.',
     button: 'Let’s Launch Your Email Campaign',

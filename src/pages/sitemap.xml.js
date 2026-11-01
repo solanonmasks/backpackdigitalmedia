@@ -19,7 +19,9 @@ export function GET({ site }) {
   // `site` is the address set in astro.config.mjs.
   const paths = [
     ...fixedPages,
-    ...Object.keys(services).map((slug) => `/services/${slug}/`),
+    ...Object.keys(services)
+      .filter((slug) => services[slug].inSitemap !== false) // skip pages marked inSitemap: false
+      .map((slug) => `/services/${slug}/`),
     ...caseStudyList.map((c) => `/case-studies/${c.slug}/`),
   ];
 
