@@ -149,6 +149,7 @@ const faqSchema = s.faq && {
     <div class="container" style="display:flex;gap:12px;flex-wrap:wrap;">
       <a href="/digital-marketing/" class="pill btn-blue">See all our services</a>
       <a href="/case-studies/" class="pill btn-blue">See our case studies</a>
+      {(s.extraLinks || []).map((l) => <a href={l.href} class="pill btn-blue">{l.label}</a>)}
     </div>
   </section>
 
