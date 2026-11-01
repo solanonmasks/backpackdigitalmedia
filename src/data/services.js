@@ -221,3 +221,38 @@ export const services = {
     },
   },
 };
+
+// ✏️ Recruitment Marketing page (/recruitment-marketing/). Same layout as the
+// service pages, but it lives at its own address, so it's kept separate here.
+export const recruitment = {
+  name: 'Recruitment Marketing',
+  seoTitle: 'Recruitment Marketing in Vancouver',
+  seoDescription: 'Indeed, Glassdoor and Meta recruitment campaigns, employer branding and recruitment video for employers hiring at volume or in hard-to-fill locations.',
+  title: 'Recruitment marketing for roles that are hard to fill.',
+  subtitle: 'Job ads, employer branding and video for employers who need qualified people at volume, or need them to move for the role.',
+  button: 'Let’s Talk Hiring',
+  image: '/assets/img/recruitment/header/logo.svg',
+  what: [
+    'Most hiring problems come down to one of two things. Either the job ads aren’t reaching the right people, or the right people see them and still don’t find a reason to apply. A posting that lists duties and a pay range has a hard time competing with an employer that shows what the work and the place are actually like.',
+    'We run recruitment campaigns on Indeed, Glassdoor and Meta, including for employers hiring across many locations. When a job board isn’t enough, we add employer branding and recruitment video, or a dedicated hiring platform like BankYourSalary.com for roles that need people to relocate.',
+  ],
+  highlights: [
+    { title: 'Indeed and Glassdoor campaigns.', text: 'Job budgets managed and adjusted so spend goes to the roles that need it most.' },
+    { title: 'Meta recruitment ads.', text: 'Reach people who aren’t actively job hunting but would move for the right role.' },
+    { title: 'Employer value proposition.', text: 'A clear, honest answer to "why work here?" that every ad and posting is built on.' },
+    { title: 'Employer branding.', text: 'Careers content and creative that show your culture and the people candidates would be working with.' },
+    { title: 'Recruitment video.', text: 'Short clips and longer documentary-style pieces that show the job, the team and the location.' },
+    { title: 'Reporting.', text: 'Applications, cost per application and candidate quality by role, in plain language.' },
+  ],
+  faq: [
+    { q: 'Do you replace our recruiters or our hiring system?', a: 'No. We bring in the applicants. Your team and your hiring system take it from there.' },
+    { q: 'How much should we budget?', a: 'It depends on the roles, the locations and how many people you need. We’ll recommend a budget during planning, and you’ll see exactly where it’s spent.' },
+    { q: 'Can you help with roles that need people to relocate?', a: 'Yes. That’s what BankYourSalary.com was built for. It delivered 43 relocation-ready candidates in 11 weeks at $115 each.' },
+    { q: 'Do you work with employers outside BC?', a: 'Yes. We run recruitment campaigns for employers across Canada and the US.' },
+  ],
+  cta: {
+    title: 'Hiring for a hard-to-fill role?',
+    text: 'Tell us the role, the location and how many people you need, and we’ll show you how we’d go after them.',
+    button: 'Let’s Talk Hiring',
+  },
+};
