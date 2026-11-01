@@ -171,6 +171,8 @@ raw['cs-bys'] = bys;
 const cjhs = {
   descriptor: 'Calgary John Howard Society · Website rebuild',
   headline: 'A 75-year-old nonprofit, three audiences, one website that finally serves all of them',
+  seoTitle: 'Nonprofit Website Case Study: CJHS',
+  seoDescription: 'How Backpack restructured, designed and built a new website for the Calgary John Howard Society that serves donors, families and agencies.',
   wallTitle: 'The site we built.',
   hero: [
     { after: '15 days', label: 'Kickoff to first design' },
