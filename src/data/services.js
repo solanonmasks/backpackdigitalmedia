@@ -18,6 +18,7 @@ export const services = {
     subtitle: 'Campaigns measured by leads and sales, with every result tracked.',
     button: 'Get More Leads',
     image: '/assets/img/marketing_sub_pages/5.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/5-animated.svg',
     what: [
       'Most businesses have boosted a post and gotten nothing back. Meta ads start working when the audience, the offer and the creative all match what your customers actually care about.',
       'We choose the setup based on your goals and what we’ve seen work, whether that’s an instant lead form, a landing page or something else. Then we watch lead quality closely, because a cheap lead who never picks up the phone isn’t a good lead. We handle the ads, the targeting and the tracking, and keep testing new creative every month.',
@@ -50,6 +51,7 @@ export const services = {
     subtitle: 'Planned content, consistent posting and replies in your voice.',
     button: 'Let’s Talk Social',
     image: '/assets/img/marketing_sub_pages/1.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/1-animated.svg',
     what: [
       'Customers check your social pages before they reach out. A quiet or patchy feed makes them wonder whether you’re still open.',
       'We start by getting deep into your business: what you do, who you serve, and just as importantly, how you talk. Your voice and tone matter as much as your services. Our goal is to become an extension of your team, fluent enough in your language that every post sounds like it came from you.',
@@ -83,6 +85,7 @@ export const services = {
     subtitle: 'Rank in search, show up in the AI summary, and get named when someone asks ChatGPT who to call.',
     button: 'Boost My SEO',
     image: '/assets/img/marketing_sub_pages/3.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/3-animated.svg',
     what: [
       'When we look at a business’s search presence, the problems are usually basic: an old address still listed on half the directories, a Google profile nobody has touched in a year, service pages that never say what area they cover. Those gaps can affect more than traditional search. AI tools also use information from across the web to understand businesses and decide which ones to mention.',
       'We work on all of them. SEO gets your site ranking. Answer engine optimization (AEO) makes your pages easy for Google and AI tools to pull answers from. Generative engine optimization (GEO) builds the reputation across the web that AI tools look at when they recommend a business.',
@@ -115,6 +118,7 @@ export const services = {
     subtitle: 'Google Ads that put you in front of people who are ready to buy.',
     button: 'Get More Leads',
     image: '/assets/img/marketing_sub_pages/4.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/4-animated.svg',
     what: [
       'Someone searching for what you sell is already close to buying. Google Ads puts you at the top of those searches right away, while SEO builds over time.',
       'Most wasted Google Ads budget goes to searches that look relevant but never buy. Someone searching "how to fix a leaky tap" probably isn’t ready to hire a plumber. Someone searching "emergency plumber Vancouver" is a different story. We keep a close eye on what people actually searched before they clicked, block what isn’t working, and track every call and form, so you can see where the money goes and what it brings back.',
@@ -157,6 +161,7 @@ export const services = {
     subtitle: 'Fast, modern sites that make it easy for customers to book, buy, call or enquire.',
     button: 'Start My Website',
     image: '/assets/img/marketing_sub_pages/6.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/6-animated.svg',
     what: [
       'A website can look good and still lose customers. If someone on a phone can’t quickly figure out how to book, call or ask a question, they go back and pick someone else.',
       'We start from what your customer came to do and build every page around it. We write the copy, set up the SEO basics, and then host and maintain the site after launch, so it stays fast and up to date.',
@@ -189,6 +194,7 @@ export const services = {
     subtitle: 'Your people, your space and your work, filmed on-site and edited to post.',
     button: 'Book a Shoot',
     image: '/assets/img/marketing_sub_pages/2.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/2-animated.svg',
     what: [
       'Video is how people get a feel for your business before they ever contact you. It shows your team, your work and your space in a way photos can’t.',
       'Every shoot starts with what you want the video to do, whether that’s getting shared, bringing in leads or showing people what it’s like to work with you. We come to you, or you come to our Kerrisdale office, and we turn the footage into clips for social, ads and your website.',
