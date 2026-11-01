@@ -75,14 +75,6 @@ export const services = {
       button: 'Let’s Talk Social',
     },
   },
-  branding: {
-    title: 'Stand Out with a Strong Brand.',
-    subtitle: 'Strategy. Content. Results.',
-    button: 'Let’s Build Your Brand',
-    image: '/assets/img/marketing_sub_pages/2.svg',
-    what: 'We design brands that capture who you are and connect with your audience.',
-    highlights: ['Logo Design', 'Brand Identity Development', 'Visual Guidelines', 'Messaging & Tone of Voice'],
-  },
   seo: {
     name: 'SEO and AI Search',
     seoTitle: 'SEO and AI Search in Vancouver',
