@@ -55,6 +55,8 @@ const raw = {
   'cs-reno': {
     descriptor: 'Montana renovation contractor · Meta Ads',
     headline: 'Same monthly budget, six times the leads',
+    seoTitle: 'Renovation Contractor Meta Ads Case Study',
+    seoDescription: 'How a renovation contractor went from 4 to about 23 consultation requests a month on the same Meta ad budget, with cost per lead down 84%.',
     hero: [
       { before: '4', after: '~23', label: 'Leads per month' },
       { before: '$343', after: '$56', label: 'Cost per lead' },
