@@ -85,6 +85,7 @@ export const services = {
     subtitle: 'Rank in search, show up in the AI summary, and get named when someone asks ChatGPT who to call.',
     button: 'Boost My SEO',
     image: '/assets/img/marketing_sub_pages/3.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/3-animated.svg',
     what: [
       'When we look at a business’s search presence, the problems are usually basic: an old address still listed on half the directories, a Google profile nobody has touched in a year, service pages that never say what area they cover. Those gaps can affect more than traditional search. AI tools also use information from across the web to understand businesses and decide which ones to mention.',
       'We work on all of them. SEO gets your site ranking. Answer engine optimization (AEO) makes your pages easy for Google and AI tools to pull answers from. Generative engine optimization (GEO) builds the reputation across the web that AI tools look at when they recommend a business.',
