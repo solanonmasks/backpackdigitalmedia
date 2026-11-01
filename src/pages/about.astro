@@ -11,6 +11,20 @@ const values = [
   { icon: 2, title: 'We tell the truth, especially when it’s bad news.', text: 'You’ll hear it from us first, along with what we’re doing about it.' },
 ];
 
+// ✏️ Details about Iqbal for Google and AI tools (structured data, not shown on the page).
+const iqbalInfo = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Iqbal Kassam',
+  jobTitle: 'President and Founder',
+  worksFor: {
+    '@type': 'ProfessionalService',
+    name: 'Backpack Digital Media',
+    url: 'https://www.backpackdigitalmedia.com',
+  },
+  // ✏️ LinkedIn: add a line here like  sameAs: ['https://www.linkedin.com/in/...'],
+};
+
 // ✏️ Team. Photos live in public/assets/img/home2/team/
 // (Open item from the handoff: confirm Garik and Ramneek are still current.)
 const team = [
@@ -23,6 +37,7 @@ const team = [
 ];
 ---
 <Base title="About Our Vancouver Marketing Agency" description="Meet the Backpack Digital Media team: a Vancouver agency running ads, content, websites and recruitment marketing for clients across Canada and the US.">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(iqbalInfo)} />
   <!-- Hero panel -->
   <section style="margin-top:50px;">
     <div style="max-width:1320px;margin:0 auto;background:#282828 url(/assets/img/home2/header/main.png) no-repeat center center;background-size:cover;padding:clamp(40px,7vw,100px) 0;border-radius:20px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;align-items:center;">
