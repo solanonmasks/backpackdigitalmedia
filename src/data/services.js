@@ -194,6 +194,7 @@ export const services = {
     subtitle: 'Your people, your space and your work, filmed on-site and edited to post.',
     button: 'Book a Shoot',
     image: '/assets/img/marketing_sub_pages/2.svg',
+    imageAnimated: '/assets/img/marketing_sub_pages/2-animated.svg',
     what: [
       'Video is how people get a feel for your business before they ever contact you. It shows your team, your work and your space in a way photos can’t.',
       'Every shoot starts with what you want the video to do, whether that’s getting shared, bringing in leads or showing people what it’s like to work with you. We come to you, or you come to our Kerrisdale office, and we turn the footage into clips for social, ads and your website.',
