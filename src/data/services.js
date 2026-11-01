@@ -1,6 +1,6 @@
-// ✏️ Service sub-page content (one entry per page at /services/<slug>/).
-// NOTE from the design handoff: this copy has not been rewritten yet for
-// the six new services. Edit the text here when it is ready.
+// ✏️ Service page content (one entry per page at /services/<slug>/), plus the
+// Recruitment Marketing page at the bottom. Copy: service page copy v6.
+// The layout is in src/components/ServicePage.astro.
 
 // ✏️ "How we work" steps. The same three steps appear on every service page.
 export const howWeWork = [

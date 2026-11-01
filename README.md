@@ -27,7 +27,9 @@ Upload the contents of `dist/` to your host, or connect this repo to Netlify, Ve
 | --- | --- |
 | Email, address, opening hours, nav links | `src/data/site.js` |
 | Where the contact form sends to | `FORM_ENDPOINT` in `src/data/site.js` |
-| Service sub-page text (Social, SEO, etc.) | `src/data/services.js` |
+| Service page text, FAQs and the shared "How we work" steps (also the Recruitment Marketing page) | `src/data/services.js` |
+| Service page layout | `src/components/ServicePage.astro` |
+| Old addresses that redirect | `redirects` in `astro.config.mjs` |
 | Case study text and numbers | `src/data/caseStudies.js` |
 | Home page text | `src/pages/index.astro` |
 | About page text and team | `src/pages/about.astro` |
@@ -45,7 +47,8 @@ Text you're likely to edit is marked with ✏️ in the code.
 | About Us | `/about/` |
 | Digital Marketing | `/digital-marketing/` |
 | Recruitment Marketing | `/recruitment-marketing/` |
-| Service pages | `/services/social/`, `/services/branding/`, `/services/seo/`, `/services/sem/`, `/services/email/`, `/services/web/` |
+| Service pages | `/services/meta-ads/`, `/services/sem/` (Google Ads), `/services/seo/`, `/services/web/`, `/services/social/`, `/services/video/` |
+| Old pages | `/services/branding/` redirects to `/services/video/`. `/services/email/` is live but unlinked and not in the sitemap. |
 | Case Studies | `/case-studies/` |
 | Case study pages | `/case-studies/painting/`, `/case-studies/renovation/`, `/case-studies/bankyoursalary/`, `/case-studies/cjhs/` |
 | Contact | `/contact/` |
@@ -56,7 +59,6 @@ The form sends to Formspree (`https://formspree.io/f/mjygqezg`, set as `FORM_END
 
 ## Still to do (from the design handoff)
 
-- Rewrite the six service sub-pages for the new service list (`src/data/services.js`).
 - Confirm the team roster (Garik and Ramneek).
 - Compress the large case-study PNGs in `public/assets/img/case-studies/` (about 14 MB total).
 - Check the Helvetica Neue font licence covers web use.
