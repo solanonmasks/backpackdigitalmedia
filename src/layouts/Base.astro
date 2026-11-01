@@ -28,6 +28,8 @@ const fullTitle = title
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/assets/font/HelveticaNeueLight.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="/assets/font/HelveticaNeueMedium.otf" as="font" type="font/otf" crossorigin />
+    <!-- Extra <head> tags from a single page (anything with slot="head") -->
+    <slot name="head" />
   </head>
   <body>
     <div class="page">
