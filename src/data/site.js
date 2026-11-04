@@ -32,4 +32,6 @@ export const footerLinks = [
   ...navLinks,
   { href: '/contractor-marketing/', label: 'Contractor marketing' },
   { href: '/contact/', label: 'Contact' },
+  { href: '/privacy-policy/', label: 'Privacy Policy' },
+  { href: '/terms/', label: 'Terms & Conditions' },
 ];

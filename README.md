@@ -53,6 +53,8 @@ Text you're likely to edit is marked with ✏️ in the code.
 | Case Studies | `/case-studies/` |
 | Case study pages | `/case-studies/painting/`, `/case-studies/renovation/`, `/case-studies/bankyoursalary/`, `/case-studies/cjhs/` |
 | Contact | `/contact/` |
+| Privacy Policy | `/privacy-policy/` (text in `src/pages/privacy-policy.md`) |
+| Terms & Conditions | `/terms/` (text in `src/pages/terms.md`) |
 
 ## Contact form
 

@@ -14,6 +14,8 @@ const fixedPages = [
   '/contractor-marketing/',
   '/case-studies/',
   '/contact/',
+  '/privacy-policy/',
+  '/terms/',
 ];
 
 export function GET({ site }) {
