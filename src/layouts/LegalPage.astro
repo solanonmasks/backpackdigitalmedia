@@ -21,6 +21,8 @@ const { frontmatter } = Astro.props;
   .legal :global(h2) { font-size: 28px; font-weight: 700; text-transform: uppercase; line-height: 1.2; margin: 48px 0 16px; }
   .legal :global(p),
   .legal :global(li) { font-size: 19px; font-weight: 300; line-height: 1.6; }
+  /* Keep line breaks from the .md file (e.g. the address block under Contact). */
+  .legal :global(p) { white-space: pre-line; }
   .legal :global(p + p) { margin-top: 16px; }
   .legal :global(ul) { margin: 16px 0 0; padding-left: 1.3em; list-style: disc; }
   .legal :global(li + li) { margin-top: 8px; }
