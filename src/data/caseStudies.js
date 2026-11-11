@@ -94,7 +94,7 @@ const raw = {
       ['Link clicks', '835', '772', ''], ['Click-through rate', '1.47%', '1.48%', 'flat'], ['Click to lead', '0.5%', '7.9%', '16x', 1],
       ['Cost per click', '$1.64', '$4.41', 'up'], ['CPM', '$24.08', '$65.09', 'up'],
     ],
-    callout: 'The last two rows are the honest part. The new campaign pays more per click and more per thousand impressions, because Meta is now bidding for people likely to submit a form rather than anyone likely to click. It is the right trade: the campaign gets fewer, more expensive clicks and turns one in thirteen into a lead instead of one in two hundred.', calloutBordered: true,
+    callout: 'The last two rows show the trade-off. The new campaign pays more per click and more per thousand impressions, because Meta is now bidding for people likely to submit a form rather than anyone likely to click. It is the right trade: the campaign gets fewer, more expensive clicks and turns one in thirteen into a lead instead of one in two hundred.', calloutBordered: true,
     why: [
       'The old campaign was built to win clicks. The new one is built to win consultations. Every change points the same way: remove the steps between the ad and the form, give the algorithm a conversion it can actually see, and show finished work instead of a stock image.',
       'For a renovation contractor, the lead form is the whole game. A homeowner scrolling at 9pm will tap a pre-filled form to book a design consultation; they will not load a website and hunt for a contact page. Add two qualifying questions and the consultations that arrive are worth the drive.',
